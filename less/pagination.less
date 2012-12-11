@@ -1,0 +1,51 @@
+.pagination {
+    display: block;
+    height: 24px;
+    margin-left: -5px;
+    -moz-box-sizing: border-box;
+    li {
+        color: @grayLight;
+        display: inline-block;
+        float: left;
+        font-size: 14px;
+        height: 24px;
+        margin-left: 5px;
+        a {
+            color: @gray;
+            display: block;
+            padding: 1px 7px;
+            &:hover {
+                background-color:  lighten(@grayLight,40%);
+                text-decoration: none;
+            }
+        }
+    }
+    .arrow {
+        a {
+            &:hover {
+                color: @grayLight;
+                background-color: transparent;
+            }
+        }
+    }
+    .is-current a {
+        background: @blue;
+        color: white;
+        cursor: default;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+            background: @blue;
+            color: @white;
+        }
+    }
+
+    .is-disabled a {
+        color: @grayLight;
+        cursor: default;
+        &:hover {
+            color: @grayLight;
+            background-color: transparent;
+        }
+    }
+}

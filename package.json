@@ -1,0 +1,26 @@
+{
+  "name": "Prelude",
+  "title": "Prelude",
+  "description": "Prelude is a flexable front-end development framework.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/amazingSurge/Prelude",
+  "author": {
+    "name": "amazingSurge",
+    "email": "amazingSurge@yahoo.com",
+    "url": "amazingSurge.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:amazingSurge/Prelude.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amazingSurge/Prelude/issues"
+  },
+  "licenses": [
+    {
+      "type": "GPL",
+      "url": "https://github.com/amazingSurge/Prelude/blob/master/LICENSE-GPL"
+    }
+  ],
+  "keywords": []
+}

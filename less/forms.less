@@ -1,0 +1,175 @@
+form {
+	margin: 0;
+	.box-sizing('border-box');
+
+
+	ul {
+		list-style: none;
+		li {
+			margin-bottom: 15px;
+		}
+	}
+
+	li.section {
+		display: block;
+		margin-bottom: 25px;
+		font-weight: bold;
+		font-size: @inputFontSize+5px;
+	}
+
+
+	/*---------------------------------------*/
+	.is-description {
+		display: inline-block;
+		font-weight: normal;
+		font-size: @inputFontSize*0.85;
+		color: lighten(@grayDark,10%);
+		vertical-align: baseline;
+	}
+
+	.input-with-prefix,
+	.input-with-postfix,
+	.input-with-button {
+		font-size: 0;
+		letter-spacing: -4px;
+	}
+
+	.is-prefix,
+	.is-postfix {
+		display: inline-block;
+		padding: 4px 10px;
+		margin-bottom: 0 0 10px;
+		height: 30px;
+		letter-spacing: normal;
+		font-size: @inputFontSize;
+		font-weight: bold;
+		text-align: center;
+		vertical-align: baseline;
+		border: 1px solid @inputDecorateBorderColor;
+		background: @inputDecorateBackgroundColor;
+		
+		.box-sizing('border-box');
+	}
+
+	.is-prefix {
+		margin-right: -1px;
+	}
+	.is-postfix,
+	.input-with-button button {
+		margin-left: -1px;
+	}
+/*------------------------------------*/
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		height: 30px;
+		display: inline-block;
+		padding: 4px 10px;
+		font-size: @inputFontSize;
+		letter-spacing: normal;
+		font-weight: bold;
+		text-decoration: none;
+		text-align: center;
+		vertical-align: top;
+		border: 1px solid lighten(@grayLight,10%);
+		border-top-color: lighten(@grayLight,20%);
+		border-left-color: lighten(@grayLight,20%);
+		background: @grayLighter;
+		cursor: pointer;
+		
+		
+		.box-sizing('border-box');
+
+		&:hover {
+			color: @grayDarker;
+			text-decoration: none;
+			background: lighten(@grayLight,30%);
+			border: 1px solid darken(@grayLight,10%);
+			border-top-color: lighten(@grayLight,10%);
+			border-left-color: lighten(@grayLight,10%);
+		}
+
+		&:active {
+			border: 1px solid lighten(@gray,10%);
+			background: lighten(@grayLight,20%);
+		}
+	}
+}
+ 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+textarea,
+select {
+	display: inline-block;
+	max-width: 100%;
+	padding: 4px;
+	height: 30px;
+	font-size: @inputFontSize;
+	letter-spacing: normal;
+	border: 1px solid @inputBorderColor;
+	background: @white;
+	outline: none;
+	vertical-align: baseline;
+
+	
+	.box-sizing('border-box');
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline;	
+	font-weight: normal;
+	letter-spacing: normal;
+	cursor: pointer;
+}
+
+select {
+	padding: 0;
+	height: auto;
+}
+
+textarea {
+	width: auto;
+	height: auto;
+	min-height: 60px;
+}
+
+label {
+	display: block;	
+	margin-bottom: 5px;
+	font-size: @inputFontSize;
+	letter-spacing: normal;
+}
+
+
+
+/*------------------------------------------*/
+input.is-error,
+textarea.is-error,
+select.is-error {
+	border-color: @inputErrorBorderColor;
+}
+
+input.is-success,
+textarea.is-success,
+select.is-success {
+	border-color: @inputSuccessBorderColor;
+}
+
+input.is-disabled {
+	background-color: @inputDisabledBackgroundColor;
+	cursor: not-allowed;
+}
+
+input:focus,
+textarea:focus {
+	border-color: @inputBorderColorFocus;
+	color: @inputColorFocus;
+}
+
+/*-------------------------------------------*/
+
+

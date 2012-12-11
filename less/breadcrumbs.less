@@ -1,0 +1,42 @@
+
+.breadcrumbs {
+    margin-left: 0;
+    overflow: hidden;
+    padding: 6px 10px 7px;
+    li {
+        display: inline-block;
+        margin: 0;
+        padding-right: 8px;
+        color: lighten(@grayDark,15%);
+        list-style: none outside none;
+    }
+    .breadcrumbs-divider {
+        padding-left: 8px;
+        color: @grayLight;
+    }
+    
+    .is-disabled {
+        color: @grayLight;
+        cursor: not-allowed;
+    }
+
+    .is-current {
+        color: @grayDark;
+        cursor: default;
+    }
+
+    &.with-divider {
+        li {
+            &:first-child:before {
+                content: " ";
+                padding-right: 0;
+            }
+
+            &:before {
+                color: lighten(@grayLight,5%);
+                content: "/";
+                padding-right: 10px;
+            }
+        }
+    }
+}
