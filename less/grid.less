@@ -1,18 +1,25 @@
 //
 // Grids
 // --------------------------------------------------
-
-#grid(@gridColumnWidth, @gridGutterWidth);
+#grid > .core;
+#grid > .default(@gridColumnWidth, @gridGutterWidth);
+#grid > .equalization(@gridColumnWidth, @gridGutterWidth);
+#grid > .specialTypes(@gridColumnWidth, @gridGutterWidth);
+#grid > .percentage;
 
 
 @media only screen and (min-width: 481px) and (max-width: 768px) { 
 	// 768px-960px
-	#grid(@gridColumnWidth768, @gridGutterWidth768);
-	#grid>.width768(@gridColumns);
+	#grid > .default(@gridColumnWidth768, @gridGutterWidth768);
+	#grid > .equalization(@gridColumnWidth768, @gridGutterWidth768);
+	#grid >	.equalization > .width768(@gridColumns);
+	#grid > .specialTypes(@gridColumnWidth768, @gridGutterWidth768);
 }
 
 @media only screen and (max-width: 480px) { 
 	// 480px-768px
-	#grid(@gridColumnWidth480, @gridGutterWidth480);
-	#grid>.width480(@gridColumns);
+	#grid > .default(@gridColumnWidth480, @gridGutterWidth480);
+	#grid > .equalization(@gridColumnWidth480, @gridGutterWidth480);
+	#grid > .equalization> .width480(@gridColumns);
+	#grid > .specialTypes(@gridColumnWidth480, @gridGutterWidth480);
 }
