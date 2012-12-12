@@ -1,7 +1,7 @@
 form {
 	margin: 0;
-	.box-sizing('border-box');
 
+	.box-sizing(border-box);
 
 	ul {
 		list-style: none;
@@ -17,13 +17,13 @@ form {
 		font-size: @inputFontSize+5px;
 	}
 
-
 	/*---------------------------------------*/
+
 	.is-description {
 		display: inline-block;
 		font-weight: normal;
 		font-size: @inputFontSize*0.85;
-		color: lighten(@grayDark,10%);
+		color: @inputDescriptionColor;
 		vertical-align: baseline;
 	}
 
@@ -46,9 +46,9 @@ form {
 		text-align: center;
 		vertical-align: baseline;
 		border: 1px solid @inputDecorateBorderColor;
-		background: @inputDecorateBackgroundColor;
+		background: @inputDecorateBgColor;
 		
-		.box-sizing('border-box');
+		.box-sizing(border-box);
 	}
 
 	.is-prefix {
@@ -58,6 +58,7 @@ form {
 	.input-with-button button {
 		margin-left: -1px;
 	}
+
 /*------------------------------------*/
 	button,
 	input[type="submit"],
@@ -72,27 +73,22 @@ form {
 		text-decoration: none;
 		text-align: center;
 		vertical-align: top;
-		border: 1px solid lighten(@grayLight,10%);
-		border-top-color: lighten(@grayLight,20%);
-		border-left-color: lighten(@grayLight,20%);
-		background: @grayLighter;
-		cursor: pointer;
+		border: 1px solid @formButtonBorderColor;
+		background: @formButtonBgColor;
+		cursor: pointer;		
 		
-		
-		.box-sizing('border-box');
+		.box-sizing(border-box);
 
 		&:hover {
-			color: @grayDarker;
+			color: @formButtonHoverColor;
 			text-decoration: none;
-			background: lighten(@grayLight,30%);
-			border: 1px solid darken(@grayLight,10%);
-			border-top-color: lighten(@grayLight,10%);
-			border-left-color: lighten(@grayLight,10%);
+			background: @formButtonHoverBgColor;
+			border: 1px solid @formButtonHoverBorderColor;
 		}
 
 		&:active {
-			border: 1px solid lighten(@gray,10%);
-			background: lighten(@grayLight,20%);
+			border: 1px solid @formButtonActiveBorderColor;
+			background: @formButtonActiveBgColor;
 		}
 	}
 }
@@ -101,6 +97,17 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="file"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
 textarea,
 select {
 	display: inline-block;
@@ -110,12 +117,11 @@ select {
 	font-size: @inputFontSize;
 	letter-spacing: normal;
 	border: 1px solid @inputBorderColor;
-	background: @white;
+	background: @inputBgColor;
 	outline: none;
 	vertical-align: baseline;
-
 	
-	.box-sizing('border-box');
+	.box-sizing(border-box);
 }
 
 input[type="checkbox"],
@@ -144,8 +150,6 @@ label {
 	letter-spacing: normal;
 }
 
-
-
 /*------------------------------------------*/
 input.is-error,
 textarea.is-error,
@@ -160,7 +164,7 @@ select.is-success {
 }
 
 input.is-disabled {
-	background-color: @inputDisabledBackgroundColor;
+	background-color: @inputDisabledBgColor;
 	cursor: not-allowed;
 }
 
@@ -169,7 +173,3 @@ textarea:focus {
 	border-color: @inputBorderColorFocus;
 	color: @inputColorFocus;
 }
-
-/*-------------------------------------------*/
-
-

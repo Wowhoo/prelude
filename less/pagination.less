@@ -1,21 +1,18 @@
 .pagination {
     display: block;
-    height: 24px;
     margin-left: -5px;
-    -moz-box-sizing: border-box;
+    .box-sizing(border-box);
     li {
-        color: @grayLight;
+        color: @paginationColor;
         display: inline-block;
         float: left;
-        font-size: 14px;
-        height: 24px;
+        font-size: @paginationFontSize;
         margin-left: 5px;
         a {
-            color: @gray;
             display: block;
             padding: 1px 7px;
             &:hover {
-                background-color:  lighten(@grayLight,40%);
+                background-color:  @paginationHoverColor;
                 text-decoration: none;
             }
         }
@@ -23,29 +20,29 @@
     .arrow {
         a {
             &:hover {
-                color: @grayLight;
-                background-color: transparent;
+                color: @paginationArrowHoverColor;
+                background-color: @paginationArrowHoverBgColor;
             }
         }
     }
     .is-current a {
-        background: @blue;
-        color: white;
+        background: @paginationCurrentBgColor;
+        color: @paginationCurrentColor;
         cursor: default;
         font-weight: bold;
         text-decoration: none;
         &:hover {
-            background: @blue;
-            color: @white;
+            background: @paginationCurrentHoverBgColor;
+            color: @paginationCurrentHoverColor;
         }
     }
 
     .is-disabled a {
-        color: @grayLight;
+        color: @paginationDisabledColor;
         cursor: default;
         &:hover {
-            color: @grayLight;
-            background-color: transparent;
+            color: @paginationDisabledHoverColor;
+            background-color: @paginationDisabledHoverBgColor;
         }
     }
 }

@@ -1,27 +1,27 @@
 
 .breadcrumbs {
+    background: @breakcrumbsBgColor;
     margin-left: 0;
     overflow: hidden;
-    padding: 6px 10px 7px;
     li {
         display: inline-block;
         margin: 0;
         padding-right: 8px;
-        color: lighten(@grayDark,15%);
+        color: @breadcrumbsColor;
         list-style: none outside none;
     }
     .breadcrumbs-divider {
         padding-left: 8px;
-        color: @grayLight;
+        color: @breadcrumbsDividerColor;
     }
     
     .is-disabled {
         color: @grayLight;
-        cursor: not-allowed;
+        cursor: @breadcrumbsDisabledColor;
     }
 
     .is-current {
-        color: @grayDark;
+        color: @breadcrumbsCurrentColor;
         cursor: default;
     }
 
@@ -33,7 +33,7 @@
             }
 
             &:before {
-                color: lighten(@grayLight,5%);
+                color: @breadcrumbsDividerColor;
                 content: "/";
                 padding-right: 10px;
             }

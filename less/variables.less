@@ -70,20 +70,61 @@
 @buttonBackgroundHighlight:            darken(@white, 10%);
 @buttonBorder:                         #bbb;
 
+@buttonHoverColor:                     @grayDark;
+@buttonHoverBgColor:                   darken(@white, 10%);
+@buttonActiveBgColor:              	   darken(@white, 10%);
+@buttonDisabledBgColor:                darken(@white, 10%);
+
 
 /*---from----*/
-@inputFontSize:                     @baseFontSize;
-@inputBorderColor:                  #aaa;
-@inputBackgroundColor:              @white;
-@inputDecorateBorderColor:          #aaa;
-@inputDecorateBackgroundColor:      @grayLighter;
+@inputFontSize:                        @baseFontSize;
+@inputBorderColor:                     #aaa;
+@inputBgColor:                         @white;
+@inputDecorateBorderColor:             #aaa;
+@inputDecorateBgColor:                 @grayLighter;
 
-@inputErrorBorderColor:             lighten(@red,20%);
-@inputSuccessBorderColor:           @green;
-@inputDisabledBackgroundColor:      #ccc;
+@inputErrorBorderColor:                lighten(@red,20%);
+@inputSuccessBorderColor:              @green;
+@inputDisabledBgColor:                 #ccc;
 
-@inputBorderColorFocus:             @blue;
-@inputColorFocus:                   #444;
+@inputBorderColorFocus:                @blue;
+@inputColorFocus:                      #444;
+
+@inputDescriptionColor:                lighten(@grayDark,10%);
+
+@formButtonBorderColor:                lighten(@grayLight,10%);
+@formButtonBgColor:                    @grayLighter;
+@formButtonHoverColor:                 @grayDarker;
+@formButtonHoverBgColor:               lighten(@grayLight,30%);
+@formButtonHoverBorderColor:           darken(@grayLight,10%);
+@formButtonActiveBorderColor:          lighten(@gray,10%);
+@formButtonActiveBgColor:              lighten(@grayLight,20%);
+
+/*---end---*/
+
+/*---pagination----*/
+@paginationFontSize:                        @baseFontSize;
+@paginationColor:                           @grayLight;
+@paginationHoverColor:                      lighten(@grayLight,40%);
+@paginationArrowHoverColor:                 @grayLight;
+@paginationArrowHoverBgColor:               transparent;
+@paginationCurrentBgColor:                  @blue;
+@paginationCurrentColor:                    @white;
+@paginationCurrentHoverBgColor:             @blue;
+@paginationCurrentHoverColor:               @white;
+@paginationDisabledColor:                   @grayLight;
+@paginationDisabledHoverColor:              @grayLight;
+@paginationDisabledHoverBgColor:            transparent;
+
+/*---end---*/
+
+/*---breakcrumbs----*/
+@breakcrumbsBgColor:                        #F6F6F6;
+@breadcrumbsColor:                          lighten(@grayDark,15%);
+@breadcrumbsDividerColor:                   @grayLight;
+@breadcrumbsDisabledColor:                  @grayLight;
+@breadcrumbsCurrentColor:                   @grayDark;
+@breadcrumbsDividerColor:                   lighten(@grayLight,5%);
 
 /*---end---*/
 
