@@ -1,10 +1,6 @@
-//
+// ==========================================================================
 // Buttons
-// --------------------------------------------------
-
-
-// Base styles
-// --------------------------------------------------
+// ==========================================================================
 
 // Core
 .button {
@@ -57,12 +53,9 @@
         cursor: default;
         background-color: @buttonDisabledBgColor;
         background-image: none;
-        .opacity(65);
+        .opacity(0.65);
         .box-shadow(none);
     }
-
-
-
 
     // button size
     &.is-mini {
@@ -78,7 +71,6 @@
         font-size: @fontSizeLarge;
     }
 
-
     //button types
     &.is-radius {
         .border-radius(@baseBorderRadius);
@@ -91,21 +83,21 @@
     }
 
 }
-    //Button groups
-    .button-group {
-        display: inline-block;
-        margin-right: 2px;
-        vertical-align: bottom;
-        &:after {
-            clear: both;
-        }
-        &:before, &:after {
-            content: "";
-            display: table;
-        }
-        > .button, > input {
-            float: left;
-            margin-left: -1px;
-        }
 
+//Button groups
+.button-group {
+    display: inline-block;
+    margin-right: 2px;
+    vertical-align: bottom;
+    &:after {
+        clear: both;
     }
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    > .button, > input {
+        float: left;
+        margin-left: -1px;
+    }
+}

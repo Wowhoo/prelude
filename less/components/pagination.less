@@ -1,7 +1,12 @@
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
 .pagination {
     display: block;
     margin-left: -5px;
     .box-sizing(border-box);
+
     li {
         color: @paginationColor;
         display: inline-block;
@@ -17,6 +22,7 @@
             }
         }
     }
+    
     .arrow {
         a {
             &:hover {
@@ -25,6 +31,7 @@
             }
         }
     }
+
     .is-current a {
         background: @paginationCurrentBgColor;
         color: @paginationCurrentColor;

@@ -1,18 +1,24 @@
-// CSS Reset
-@import "reset.less";
+// Core variables
+@import "variables.less";
 
-// Core variables and mixins
-@import "variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "mixins/mixins.less";
+// Mixins
+@import "mixins.less";
 
-// // // Grid system and page structure
-@import "grid.less";
-@import "typography.less";
-@import "forms.less";
-@import "tables.less";
+// Common
+// ==========================================================================
+@import "common/reset.less";
+@import "common/typography.less";
+@import "common/forms.less";
 
-@import "text.less";
-// @import "buttons.less";
-@import "breadcrumbs.less";
-@import "pagination.less";
-@import "pager.less";
+// Functions
+// ==========================================================================
+@import "functions/grid.less";
+
+// Components
+// ==========================================================================
+@import "components/text.less";
+@import "components/tables.less";
+@import "components/buttons.less";
+@import "components/breadcrumbs.less";
+@import "components/pagination.less";
+@import "components/pager.less";

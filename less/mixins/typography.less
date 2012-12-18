@@ -84,6 +84,13 @@
   hyphens: auto;
 }
 
+// Requires inline-block or block for proper styling
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 // Optional hyphenation
 // Sets how to split words to improve the layout of paragraphs
 .hyphens(@mode: auto) {
