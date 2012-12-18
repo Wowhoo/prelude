@@ -1,0 +1,96 @@
+// ==========================================================================
+// Typography mixins
+// ==========================================================================
+
+// Fonts
+// ==========================================================================
+#font {
+  #family {
+    .serif() {
+      font-family: @serifFontFamily;
+    }
+    .sans-serif() {
+      font-family: @sansFontFamily;
+    }
+    .monospace() {
+      font-family: @monoFontFamily;
+    }
+  }
+  .shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  }
+  .serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+    #font > #family > .serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .sans-serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+    #font > #family > .sans-serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+    #font > #family > .monospace;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+}
+
+
+// Typography related mixins
+// ==========================================================================
+
+.font-size-rems(@px-size){
+  @rem-size: @px-size / @base-font-size;
+  font-size: ~"@{px-size}px"; 
+  font-size: ~"@{rem-size}rem";
+}
+
+.font-size-ems(@target-px-size, @context-px-size:@base-font-size) {
+  font-size: (@target-px-size / @context-px-size) * 1em;
+}
+
+.font-face( @family-name, @font-path, @font-weight:normal, @font-style:normal, @include-svg:false ) when not (@include-svg) {
+  @font-face {
+      font-family: @family-name;
+      src: url('@{font-path}.eot');
+      src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+           url('@{font-path}.woff') format('woff'),
+           url('@{font-path}.ttf') format('truetype');
+      font-weight: @font-weight;
+      font-style: @font-style;
+  }
+}
+
+.font-face( @family-name, @font-path, @font-weight:normal, @font-style:normal, @include-svg:false ) when (@include-svg) {
+  @font-face {
+      font-family: @family-name;
+      src: url('@{font-path}.eot');
+      src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+           url('@{font-path}.woff') format('woff'),
+           url('@{font-path}.ttf') format('truetype'),
+       url('@{font-path}.svg#@{family-name}') format('svg');
+      font-weight: @font-weight;
+      font-style: @font-style;
+  }
+}
+
+// Wrap words
+.wrap-words() {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+// Optional hyphenation
+// Sets how to split words to improve the layout of paragraphs
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: @mode;
+     -moz-hyphens: @mode;
+      -ms-hyphens: @mode;
+       -o-hyphens: @mode;
+          hyphens: @mode;
+}
