@@ -22,15 +22,6 @@
             }
         }
     }
-    
-    .arrow {
-        a {
-            &:hover {
-                color: @paginationArrowHoverColor;
-                background-color: @paginationArrowHoverBgColor;
-            }
-        }
-    }
 
     .is-current a {
         background: @paginationCurrentBgColor;
@@ -50,6 +41,15 @@
         &:hover {
             color: @paginationDisabledHoverColor;
             background-color: @paginationDisabledHoverBgColor;
+        }
+    }
+}
+
+.pagination-arrow {
+    a {
+        &:hover {
+            color: @paginationArrowHoverColor;
+            background-color: @paginationArrowHoverBgColor;
         }
     }
 }

@@ -1,15 +1,3 @@
-/*---from----*/
-
-/*---end---*/
-
-/*---pagination----*/
-
-/*---end---*/
-
-/*---breakcrumbs----*/
-
-/*---end---*/
-
 #grid .core .row {
   width: 100%;
   overflow: hidden;
@@ -822,10 +810,6 @@ form {
       -ms-box-sizing: border-box;
        -o-box-sizing: border-box;
           box-sizing: border-box;
-  /*---------------------------------------*/
-
-  /*------------------------------------*/
-
 }
 
 form ul {
@@ -987,8 +971,6 @@ label {
   font-size: 14px;
   letter-spacing: normal;
 }
-
-/*------------------------------------------*/
 
 input.is-error,
 textarea.is-error,
@@ -2385,38 +2367,6 @@ textarea:focus {
   }
 }
 
-.text-warning {
-  color: #c09853;
-}
-
-.text-warning:hover {
-  color: #a47e3c;
-}
-
-.text-error {
-  color: #b94a48;
-}
-
-.text-error:hover {
-  color: #953b39;
-}
-
-.text-info {
-  color: #3a87ad;
-}
-
-.text-info:hover {
-  color: #2d6987;
-}
-
-.text-success {
-  color: #468847;
-}
-
-.text-success:hover {
-  color: #356635;
-}
-
 table {
   max-width: 100%;
   background-color: transparent;
@@ -2651,6 +2601,46 @@ table.is-sortable thead th {
   margin-left: -1px;
 }
 
+.alert-warning {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+}
+
+.alert-warning:hover {
+  color: #a47e3c;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+.alert-error:hover {
+  color: #953b39;
+}
+
+.alert-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-success:hover {
+  color: #356635;
+}
+
+.alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-info:hover {
+  color: #2d6987;
+}
+
 .breadcrumbs {
   margin-left: 0;
   overflow: hidden;
@@ -2663,11 +2653,6 @@ table.is-sortable thead th {
   margin: 0;
   color: #595959;
   list-style: none outside none;
-}
-
-.breadcrumbs .breadcrumbs-divider {
-  padding-left: 8px;
-  color: #a6a6a6;
 }
 
 .breadcrumbs .is-disabled {
@@ -2689,6 +2674,11 @@ table.is-sortable thead th {
   padding-right: 10px;
   color: #a6a6a6;
   content: "/";
+}
+
+.breadcrumbs-divider {
+  padding-left: 8px;
+  color: #a6a6a6;
 }
 
 .pagination {
@@ -2719,11 +2709,6 @@ table.is-sortable thead th {
   background-color: #ffffff;
 }
 
-.pagination .arrow a:hover {
-  color: #999999;
-  background-color: transparent;
-}
-
 .pagination .is-current a {
   font-weight: bold;
   color: #ffffff;
@@ -2743,6 +2728,11 @@ table.is-sortable thead th {
 }
 
 .pagination .is-disabled a:hover {
+  color: #999999;
+  background-color: transparent;
+}
+
+.pagination-arrow a:hover {
   color: #999999;
   background-color: transparent;
 }

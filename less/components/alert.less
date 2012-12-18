@@ -1,0 +1,38 @@
+// ==========================================================================
+// Alert
+// ==========================================================================
+.alert-warning { 
+	color: @alertWarningColor;
+	background-color: @alertWarningBgColor;
+	border-color: @alertWarningBorderColor;
+	&:hover { 
+		color: darken(@alertWarningColor, 10%); 
+	}
+}
+
+.alert-error { 
+	color: @alertErrorColor; 
+	background-color: @alertErrorBgColor;
+	border-color: @alertErrorBorderColor;
+	&:hover { 
+		color: darken(@alertErrorColor, 10%); 
+	}
+}
+
+.alert-success { 
+	color: @alertSuccessColor;
+	background-color: @alertSuccessBgColor;
+	border-color: @alertSuccessBorderColor;
+	&:hover { 
+		color: darken(@alertSuccessColor, 10%); 
+	}
+}
+
+.alert-info { 
+	color: @alertInfoColor; 
+	background-color: @alertInfoBgColor;
+	border-color: @alertInfoBorderColor;
+	&:hover { 
+		color: darken(@alertInfoColor, 10%); 
+	}
+}
