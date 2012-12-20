@@ -1,9 +1,8 @@
 // ==========================================================================
-// Global values
+// Variables
 // ==========================================================================
 
 // Grays
-// ==========================================================================
 @black:                 #000;
 @grayDarker:            #222;
 @grayDark:              #333;
@@ -14,7 +13,6 @@
 
 
 // Accent colors
-// ==========================================================================
 @blue:                  #049cdb;
 @blueDark:              #0064cd;
 @green:                 #46a546;
@@ -24,20 +22,7 @@
 @pink:                  #c3325f;
 @purple:                #7a43b6;
 
-
-// Scaffolding
-// ==========================================================================
-@bodyBackground:        @white;
-@textColor:             @grayDark;
-
-
-// Links
-// ==========================================================================
-@linkColor:             #08c;
-@linkColorHover:        darken(@linkColor, 15%);
-
-
-// Typography
+// Common:Typography
 // ==========================================================================
 @sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
@@ -52,30 +37,33 @@
 @headingsFontWeight:    bold;    // instead of browser default, bold
 @headingsColor:         inherit; // empty to use BS default, @textColor
 
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           1px 6px;   // 24px
+
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
 @codeBackgroude:        #F8F8F8;
 @codeBorder:            #DDDDDD;
 @markBackground:        #FFEE55;
 
+@bodyBackground:        @white;
+@textColor:             @grayDark;
 
-// Tables
-// ==========================================================================
-@tableBackground:                   transparent; // overall background-color
-@tableBackgroundAccent:             #f9f9f9; // for striping
-@tableBackgroundHover:              #f5f5f5; // for hover
-@tableBorder:                       #ddd; // table and cell border
+// Link
+@linkColor:             #08c;
+@linkColorHover:        darken(@linkColor, 15%);
 
-// Buttons
-// ==========================================================================
-@buttonBackground:                     @white;
-@buttonBackgroundHighlight:            darken(@white, 10%);
-@buttonBorder:                         #bbb;
+// Horizontal forms & lists
+@horizontalComponentOffset:       180px;
 
-@buttonHoverColor:                     @grayDark;
-@buttonHoverBgColor:                   darken(@white, 10%);
-@buttonActiveBgColor:              	   darken(@white, 10%);
-@buttonDisabledBgColor:                darken(@white, 10%);
-
-// Forms
+// Common:Forms
 // ==========================================================================
 @inputFontSize:                        @baseFontSize;
 @inputBorderColor:                     #aaa;
@@ -100,7 +88,26 @@
 @formButtonActiveBorderColor:          lighten(@gray,10%);
 @formButtonActiveBgColor:              lighten(@grayLight,20%);
 
-// Pagination
+// Component:Tables
+// ==========================================================================
+@tableBackground:                   transparent; // overall background-color
+@tableBackgroundAccent:             #f9f9f9; // for striping
+@tableBackgroundHover:              #f5f5f5; // for hover
+@tableBorder:                       #ddd; // table and cell border
+
+// Component:Buttons
+// ==========================================================================
+@buttonBackground:                     @white;
+@buttonBackgroundHighlight:            darken(@white, 10%);
+@buttonBorder:                         #bbb;
+
+@buttonHoverColor:                     @grayDark;
+@buttonHoverBgColor:                   darken(@white, 10%);
+@buttonActiveBgColor:              	   darken(@white, 10%);
+@buttonDisabledBgColor:                darken(@white, 10%);
+
+
+// Component:Pagination
 // ==========================================================================
 @paginationFontSize:                        @baseFontSize;
 @paginationColor:                           @grayLight;
@@ -115,7 +122,7 @@
 @paginationDisabledHoverColor:              @grayLight;
 @paginationDisabledHoverBgColor:            transparent;
 
-// Breakcrumbs
+// Component:Breakcrumbs
 // ==========================================================================
 @breakcrumbsBgColor:                        #F6F6F6;
 @breadcrumbsColor:                          lighten(@grayDark,15%);
@@ -125,22 +132,7 @@
 @breadcrumbsDividerColor:                   lighten(@grayLight,5%);
 
 
-// COMPONENT VARIABLES
-// --------------------------------------------------
-// Based on 14px font-size and 20px line-height
-@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
-@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
-@fontSizeMini:          @baseFontSize * 0.75; // ~11px
-
-@paddingLarge:          11px 19px; // 44px
-@paddingSmall:          2px 10px;  // 26px
-@paddingMini:           1px 6px;   // 24px
-
-@baseBorderRadius:      4px;
-@borderRadiusLarge:     6px;
-@borderRadiusSmall:     3px;
-
-// Alert
+// Component:Alert
 // ==========================================================================
 @alertWarningColor:       #c09853;
 @alertWarningBgColor:     #fcf8e3;
@@ -158,13 +150,8 @@
 @alertInfoBgColor:        #d9edf7;
 @alertInfoBorderColor:    darken(spin(@alertInfoBgColor, -10), 7%);
 
-// Horizontal forms & lists
-// -------------------------
-@horizontalComponentOffset:       180px;
-
-// GRID
-// --------------------------------------------------
-
+// Function:GRID
+// ==========================================================================
 //Default 960px grid
 @gridColumns:             12;
 @gridColumnWidth:         60px;
