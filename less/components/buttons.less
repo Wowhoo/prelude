@@ -101,3 +101,20 @@
         margin-left: -1px;
     }
 }
+
+
+//remove focus dashed in ff
+.button {
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        outline: none;
+    }
+}
+.button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    outline: 0;
+}
