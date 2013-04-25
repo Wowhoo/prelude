@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/prelude.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+    <!--[if lt IE 9]>
+    <script type='text/javascript' src='../js/respond.min.js'></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="demoNav">
+        <ul>
+            <li><a href="#top">typography</a></li>
+            <li><a href="#table">table</a></li>
+            <li><a href="#form">form</a></li>
+            <li><a href="#buttons">buttons</a></li>
+            <li><a href="#pager">pager</a></li>
+            <li><a href="#pagination">pagination</a></li>
+            <li><a href="#breadcrumbs">breadcrumbs</a></li>
+            <li><a href="#breadcrumbs">alert</a></li>
+        </ul>
+    </nav>
+    <!-- typography -->
+    <div class="type-test" id="top">
+        <h1>h1. Heading 1</h1>
+        <h2>h2. Heading 2</h2>
+        <h3>h3. Heading 3</h3>
+        <h4>h4. Heading 4</h4>
+        <h5>h5. Heading 5</h5>
+        <h6>h6. Heading 6</h6>
+        <p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    </div>
+    <div class="type-test">
+        <h1>h1. Heading 1</h1>
+        <p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <h2>h2. Heading 2</h2>
+        <p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <h3>h3. Heading 3</h3>
+        <p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <h4>h4. Heading 4</h4>
+        <p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <h5>h5. Heading 5</h5>
+        <p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <h6>h6. Heading 6</h6>
+        <p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    </div>
+    
+    <div class="type-test">
+        <h3>p:lead</h3>
+        <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+        
+        <h3>p:<code>&lt;small&gt;</code></h3>  
+        <p>
+            <small>This line of text is meant to be treated as fine print.</small>
+        </p>
+        
+        <h3>p:<code>&lt;strong&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <strong>rendered as bold text</strong>
+            .
+        </p>
+        
+        <h3>p:<code>&lt;italics&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <em>rendered as italicized text</em>
+            .
+        </p>
+        
+        <h3>p: <code>&lt;code&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <code>rendered as italicized text</code>
+            .
+        </p>
+        
+        <h3>p: <code>&lt;kbd&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <kbd>Cmd + Shift + i</kbd>
+            .
+        </p>
+        
+        <h3>p: <code>&lt;del&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <del>rendered as italicized text</del>
+            .
+        </p>
+        
+        <h3>p: <code>&lt;ins&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <ins>rendered as italicized text</ins>
+            .
+        </p>
+        
+        <h3>p: <code>&lt;sup&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <sup>rendered as italicized text</sup>
+            .
+        </p>
+        
+        <h3>p: <code>&lt;sub&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <sub>rendered as italicized text</sub>
+            .
+        </p>
+        
+        <h3>p: <code>&lt;mark&gt;</code></h3>
+        <p>
+            The following snippet of text is
+            <mark>rendered as italicized text</mark>
+            .
+        </p>
+        
+        
+        <h3>p:Emphasis</h3>
+        <p class="muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+        <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+        <p class="text-error">Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p class="text-info">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.</p>
+        <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+            
+        <h3>Abbreviations</h3>
+        <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr></p>
+        <p><abbr title="HyperText Markup Language">HTML</abbr> is the best thing since sliced bread.</p>
+    </div>
+        
+    <div class="type-test">
+        <h3>Addresses</h3>
+        <address>
+            <strong>Twitter, Inc.</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+         
+        <address>
+            <strong>Full Name</strong><br>
+            <a href="mailto:#">first.last@gmail.com</a>
+        </address>
+    </div>
+        
+    <div class="type-test">
+        <h3>Blockquotes</h3>
+        <h4>Default blockquote</h4>
+        <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </blockquote>
+        
+        <h4>Naming a source</h4>
+        <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+        </blockquote>
+        <div style="overflow: hidden;">
+            <h4>Alternate displays</h4>
+            <blockquote class="pull-right">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>
+                Someone famous in
+                <cite title="Source Title">Source Title</cite>
+                </small>
+            </blockquote>
+        </div>
+    </div>
+    
+    <div class="type-test">
+        <h3>Lists</h3>
+        <h4>Unordered</h4>
+        <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>
+                        Purus sodales ultricies
+                        <ul>
+                            <li>Phasellus iaculis neque</li>
+                            <li>Purus sodales ultricies</li>
+                            <li>Vestibulum laoreet porttitor sem</li>
+                            <li>Ac tristique libero volutpat at</li>
+                        </ul>
+                    </li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ul>
+        
+        <h4>Ordered</h4>
+        <ol>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet
+                <ol>
+                    <li>Phasellus iaculis neque</li>
+                    <li>
+                        Purus sodales ultricies
+                        <ol>
+                            <li>Phasellus iaculis neque</li>
+                            <li>Purus sodales ultricies</li>
+                            <li>Vestibulum laoreet porttitor sem</li>
+                            <li>Ac tristique libero volutpat at</li>
+                        </ol>
+                    </li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ol>
+            </li>
+            <li>Nulla volutpat aliquam velit</li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ol>
+        
+        <h4>Unstyled</h4>
+        <ul class="is-unstyled">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ul>
+    </div>
+    
+    <div class="type-test">
+        <h3>Description</h3>
+        <h4>Default description</h4>
+        <dl>
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+            <dt>Malesuada porta</dt>
+            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+        </dl>
+        
+        <h4>Horizontal description</h4>
+        <dl class="is-horizontal">
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+            <dt>Malesuada porta</dt>
+            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+            <dt>Felis euismod semper eget lacinia</dt>
+            <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+        </dl>
+    </div>
+    
+    <div class="type-test">                                   
+        <h3>a</h3>  
+        <p>This is <a href="www.baidu.com">Baidu</a></p>
+        
+        <h3>img</h3>  
+        <p>This is image test <img class="is-rounded" src="../img/test.jpg" alt="#"></p>
+        <p>This is image test <img class="is-polaroid" src="../img/test.jpg" alt="#"></p>
+        <p>This is image test <img class="is-circle" src="../img/test.jpg" alt="#"></p>
+    </div>
+
+    <!-- table -->
+
+    <div class="type-test" id="table">
+        <h3>Basic Table</h3>
+        <p><code>.table</code></p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>Optional classes</h3>
+        <h4>Simple Table</h4>
+        <p><code>.table</code>and<code>.is-striped</code></p>
+        <table class="table is-simple">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h4>Striped Table</h4>
+        <p><code>.table</code>and<code>.is-striped</code></p>
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h4>Bordered Table</h4>
+        <p><code>.table</code>and<code>.is-bordered</code></p>
+        <table class="table is-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h4>Hovered Table</h4>
+        <p><code>.table</code>and<code>.is-hover</code></p>
+        <table class="table is-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h4>Condensed Table</h4>
+        <p><code>.table</code>and<code>.is-condensed</code></p>
+        <table class="table is-condensed">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h4>Sortable Table</h4>
+        <p><code>.table</code>and<code>.is-sortable</code></p>
+        <table class="table is-sortable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <!-- form -->
+
+    <div class="type-test" id="form">
+        <form>
+            <ul>
+                <li class="section">Regular Input</li>
+                <li>
+                    <label for="textfield">Text Field</label>
+                    <input type="text" />
+                    <span class="is-description">Description</span>
+                </li>
+                
+                <li>
+                    <label for="placeholder">Placeholder</label>
+                    <input type="text" placeholder="Placeholder Text" />
+                </li>
+
+                <li>
+                    <label class="disabled" for="disabledField">Disabled Field</label>
+                    <input type="text" disabled="disabled" class="is-disabled">
+                </li>
+
+                <li>
+                    <label class="success" for="textField(Success)">Text Field (Success)</label>
+                    <input type="text" class="is-success" />
+                </li>
+
+                <li>
+                    <label class="error" for="textField(Error)">Text Field (Error)</label>
+                    <input type="text" class="is-error" />
+                </li>
+
+
+                <li class="section">Input With a decorate(button,prefix,postfix)</li>
+                <li>
+                    <label for="">Input With a prefix</label>
+                    <div class="input-with-prefix">
+                        <span class="is-prefix">#</span>
+                        <input type="text" />
+                    </div>
+                </li>
+                <li>
+                    <label for="">Input With a postfix</label>
+                     <div class="input-with-postfix">
+                        <input type="text" />
+                        <span class="is-postfix">.com</span>
+                    </div>
+                </li>
+                <li>
+                    <label for="">Input With a button</label>
+                    <div class="input-with-button">
+                        <input type="text" />
+                        <button>search</button>
+                    </div>
+                </li>
+
+                <li class="section">Select</li>
+                <li>
+                    <label for="selectList">Select List</label>
+                    <select>
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                        <option value="Option 3">Option 3</option>
+                        <option value="Option 4">Option 4</option>
+                    </select>
+                </li>
+
+                <li class="section">Checkboxes</li>
+                <li>
+                    <label for="regularCheckbox">
+                        <input type="checkbox" value="checkbox 1" id="regularCheckbox" />
+                        <span>Regular Checkbox</span>
+                    </label>
+                </li>
+
+                <li>
+                    <label for="secondRegularCheckbox">
+                        <input type="checkbox" value="checkbox 2" id="secondRegularCheckbox" />
+                        <span>Regular Checkbox</span>
+                    </label>
+                </li>
+
+                <li class="section">Radio Buttons</li>
+                <li>
+                    <label for="regularRadio">
+                        <input type="radio" value="radio 1" id="regularRadio" name="radios" />
+                        <span>Regular Radio</span>
+                    </label>
+                </li>
+
+                <li>
+                    <label for="secondRegularRadio">
+                        <input type="radio" value="radio 2" id="secondRegularRadio" name="radios" />
+                        <span>Regular Radio</span>
+                    </label>
+                </li>
+
+                <li class="section">File Upload</li>
+                <li>
+                    <label for="file1">File Field</label>
+                    <input id="file1" class="file" type="file" />
+                </li>
+
+                <li class="section">Textarea</li>
+                <li>
+                    <label for="regularTextarea">Regular Textarea</label>
+                    <textarea class="regularTextarea"></textarea>
+                </li>
+
+                <li class="section">Form Button</li>
+                <li>
+                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Reset" />
+                    <input type="button" value="Button" />
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <!-- buttons -->
+        
+    <div class="type-test" id="buttons">
+        <h3>Basic buttons</h3>
+        <table class="bordered width-100">
+            <tbody>
+                <tr>
+                    <td colspan="2"><b>Sizes</b></td>
+                </tr>
+                <tr>
+                    <td><a class="button is-mini" href="#">mini</a></td>
+                    <td><code>.button</code> and <code>.is-mini</code></td>
+                </tr>
+                <tr>
+                    <td><a class="button is-small" href="#">Small</a></td>
+                    <td><code>.button</code> and <code>.is-small</code></td>
+                </tr>
+                <tr>
+                    <td><button class="button">Normal</button></td>
+                    <td><code>.button</code></td>              
+                </tr>
+                <tr>
+                    <td><a class="button is-large" href="#">large</a></td>
+                    <td><code>.button</code> and <code>.is-large</code></td> 
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Styles</b></td>
+                </tr> 
+                <tr>
+                    <td><input type="submit" value="Radius" class="button is-radius"></td>
+                    <td><code>.button</code> and <code>.is-radius</code></td>
+                </tr>   
+                <tr>
+                    <td><input type="submit" value="Round" class="button is-round"></td>
+                    <td><code>.button</code> and <code>.is-round</code></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Active" class="button is-active"></td>
+                    <td><code>.button</code> and <code>.is-active</code></td>
+                </tr>   
+                <tr>
+                    <td><input type="submit" value="Disabled" class="button is-disabled"></td>
+                    <td><code>.button</code> and <code>.is-disabled</code></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Full Width" class="button is-full"></td>
+                    <td><code>.button</code> and <code>.is-full</code></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Multiple tags</b></td>
+                </tr> 
+                <tr>
+                    <td><button class="button">Form Button</button></td>
+                    <td><code>.button</code></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Input Submit Button" class="button"></td>
+                    <td><code>.button</code></td>
+                </tr>
+                <tr>
+                    <td><a class="button" href="#">Regular Button</a></td>
+                    <td><code>.button</code></td>
+                </tr> 
+                <tr>
+                    <td colspan="2"><b>Button groups</b></td>
+                </tr> 
+                <tr>
+                    <td><span class="button-group">
+                            <button class="button">1</button>
+                            <button class="button">2</button>
+                            <button class="button">3</button>
+                        </span>
+                        <span class="button-group">
+                            <input type="submit" value="button1" class="button">
+                            <input type="submit" value="button2" class="button">
+                            <input type="submit" value="button3" class="button"> 
+                        </span>
+                    </td>
+                    <td><code>.button-group</code> &gt; <code>.button</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- pager -->
+
+    <div class="type-test" id="pager">
+        <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>
+    </div>
+
+    <!-- pagination -->
+
+    <div class="type-test" id="pagination">
+        <ul class="pagination">
+            <li class="arrow is-disabled"><a href="">«</a></li>
+            <li class="is-current"><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li class="is-disabled"><a href="">…</a></li>
+            <li><a href="">12</a></li>
+            <li><a href="">13</a></li>
+            <li class="arrow"><a href="">»</a></li>
+        </ul>
+    </div>
+
+    <!-- breadcrumbs -->
+
+    <div class="type-test" id="breadcrumbs">
+        <ul class="breadcrumbs">
+            <li><a href="#">Home</a> <span class="breadcrumbs-divider">/</span></li>
+            <li><a href="#">Features</a> <span class="breadcrumbs-divider">/</span></li>
+            <li class="is-disabled">Gene Splicing <span class="breadcrumbs-divider">/</span></li>
+            <li class="is-current">Home</li>
+        </ul>
+
+        <ul class="breadcrumbs">
+            <li>Home <span class="breadcrumbs-divider">/</span></li>
+            <li>Features <span class="breadcrumbs-divider">/</span></li>
+            <li>Gene Splicing <span class="breadcrumbs-divider">/</span></li>
+            <li class="is-current">Home</li>
+        </ul>
+
+        <!-- structure2 -->
+
+        <ul class="breadcrumbs with-divider">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li class="is-disabled">Gene Splicing</li>
+            <li class="is-current">Home</li>
+        </ul>
+
+        <ul class="breadcrumbs with-divider">
+            <li>Home</li>
+            <li>Features</li>
+            <li>Gene Splicing</li>
+            <li class="is-current">Home</li>
+        </ul>
+    </div>
+
+    <div class="type-test" id="alert">
+        <ul>
+            <li>
+                <div class="alert-warning">
+                    <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                </div>
+            </li>
+            <li>
+                <div class="alert-error">
+                    <strong>Error!</strong> Best check yo self, you're not right.
+                </div>
+            </li>
+            <li>
+                <div class="alert-success">
+                    <strong>Success!</strong> Congratulation to you! you're good.
+                </div>
+            </li>
+            <li>
+                <div class="alert-info">
+                    <strong>Information!</strong> Best check yo self, you have new informations.
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+
+</body>
+</html>

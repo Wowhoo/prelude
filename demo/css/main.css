@@ -1,0 +1,132 @@
+body {
+    margin-left: 150px;
+}
+
+ul {
+    list-style: none;
+}
+
+#alert ul li {
+    margin-bottom: 10px;
+}
+
+.demoNav {
+    position: fixed;
+    top: 50px;
+    left: 30px;
+    background-color: rgba(0,0,0,.4);
+    z-index: 1;
+    border-radius: 8px 0 0 8px;
+}
+
+.demoNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.demoNav ul li a {
+    display: block;
+    padding: 8px 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.demoNav ul li:first-child a {
+    border-radius: 8px 0 0 0;
+}
+.demoNav ul li:last-child a {
+    border-radius: 0 0 0 8px;
+}
+
+.demoNav ul li a:hover {
+    background-color: rgba(4, 156, 219,0.5);
+    color: #fff;
+    text-decoration: none;
+}
+
+.demoNav ul li a:active {
+    background-color: rgb(4,156,219);
+}
+
+.type-test:after, .grid-test:after {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px 0 4px 0;
+    color: rgb(157, 160, 164);
+    content: "Example";
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    padding: 3px 7px;
+    position: absolute;
+    top: -1px;
+}
+.type-test, .grid-test {
+	background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px 4px 4px 4px;
+    margin: 15px auto;
+
+    padding: 39px 19px 14px;
+    position: relative;
+    overflow: visible;  
+}
+
+.grid-test {
+    width: 960px;
+}
+
+.row{
+    background-color: rgb(220, 220, 220);
+    margin-bottom: 10px;
+}
+
+.one-half, .one-third, .two-third, 
+    .one-fourth, .two-fourth, .three-fourth, 
+    .one-fifth, .two-fifth, .three-fifth, .four-fifth, 
+    .one-sixth, .two-sixth, .three-sixth, .four-sixth, .five-sixth,
+    .column, [class*="span-"], [class*="column-"] {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      background-color: rgb(180, 180, 180);
+    }
+
+@media only screen and (max-width: 768px) { 
+    .grid-test {
+        width: 768px;
+    }
+}
+
+@media only screen and (max-width: 480px) { 
+    .grid-test {
+        width: 480px;
+    }
+}
+
+
+.width-100 {
+    width: 100%;
+}
+
+table.bordered td, table.bordered th {
+    border: 1px solid #DDDDDD;
+}
+
+th, td {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 0.75em 0.5em;
+}
+
+form {
+    margin: 0 0 20px;
+    padding: 5px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+}
+
+legend {
+    margin-bottom: 10px;
+}

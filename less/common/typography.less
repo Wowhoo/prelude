@@ -39,6 +39,17 @@ a:hover {
   text-decoration: underline;
 }
 
+//remove focus&acitve dashed in ff
+a {
+  outline: none;
+  &:focus {
+      outline: none;
+  }
+  &:active {
+      outline: none;
+  }
+}
+
 // Emphasis & misc
 // ==========================================================================
 

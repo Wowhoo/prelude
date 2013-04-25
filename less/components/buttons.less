@@ -25,17 +25,10 @@
         color: @buttonHoverColor;
         text-decoration: none;
         background-color: @buttonHoverBgColor;
-        // *background-color: darken(@white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
-        background-position: 0 -15px;
 
         // transition is only when going to hover, otherwise the background
         // behind the gradient (there for IE<=9 fallback) gets mismatched
         .transition(background-position .1s linear);
-    }
-
-    // Focus state for keyboard and accessibility
-    &:focus {
-        .tab-focus();
     }
 
     // Active state
@@ -103,7 +96,7 @@
 }
 
 
-//remove focus dashed in ff
+//remove focus dashed
 .button {
     outline: none;
     &:focus {
