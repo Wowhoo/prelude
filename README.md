@@ -17,7 +17,7 @@ In your web page:
 Build From Source
 -----------------
 Optionally, you can build Prelude from its source on Github. To do this, you'll
-need to have Node.js and npm installed. We use [Grunt][] to build Pure.
+need to have Node.js and npm installed. We use [Grunt][] to build Prelude.
 [Grunt]: http://gruntjs.com/
 
 ```shell
