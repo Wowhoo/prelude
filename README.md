@@ -2,8 +2,8 @@
 
 Prelude is a flexable front-end development framework.
 
-## Getting Started
------------------
+Getting Started
+---------------
 Download the [production version][min] or the [development version][max].
 [min]: https://raw.github.com/amazingSurge/prelude/master/build/prelude-min.css
 [max]: https://raw.github.com/amazingSurge/prelude/master/build/prelude.css
@@ -27,7 +27,8 @@ $ npm install
 $ grunt
 ```
 
-## Documentation
+Documentation
+-------------
 _(Coming soon)_
 
 Release History
