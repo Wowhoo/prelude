@@ -1,18 +1,13 @@
+@import "init.less";
 // ==========================================================================
 // Buttons
 // ==========================================================================
-
 // Core
 .button {
-    display: inline-block;
-    .ie7-inline-block();
     padding: 4px 12px;
     font-size: @baseFontSize;
     line-height: @baseLineHeight;
     *line-height: @baseLineHeight;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
     .buttonBackground(@buttonBackground, @buttonBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
     border: 1px solid @buttonBorder;
     // *border: 0; // Remove the border to prevent IE7's black border on input:focus
@@ -93,21 +88,4 @@
         float: left;
         margin-left: -1px;
     }
-}
-
-
-//remove focus dashed
-.button {
-    outline: none;
-    &:focus {
-        outline: none;
-    }
-    &:active {
-        outline: none;
-    }
-}
-.button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    outline: 0;
 }

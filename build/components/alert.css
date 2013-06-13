@@ -1,0 +1,36 @@
+.alert-warning {
+  padding: 8px 15px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+}
+.alert-warning:hover {
+  color: #a47e3c;
+}
+.alert-error {
+  padding: 8px 15px;
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+.alert-error:hover {
+  color: #953b39;
+}
+.alert-success {
+  padding: 8px 15px;
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-success:hover {
+  color: #356635;
+}
+.alert-info {
+  padding: 8px 15px;
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-info:hover {
+  color: #2d6987;
+}

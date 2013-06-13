@@ -15,8 +15,5 @@ _(Coming soon)_
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 amazingSurge  
+Copyright (c) 2013 amazingSurge  
 Licensed under the GPL license.
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. 

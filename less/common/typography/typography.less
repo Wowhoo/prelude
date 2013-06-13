@@ -1,5 +1,28 @@
+@import "init.less";
 // ==========================================================================
 // Typography
+// ==========================================================================
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+
+@baseFontFamily:        @sansFontFamily;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+@codeBackgroude:        #F8F8F8;
+@codeBorder:            #DDDDDD;
+@markBackground:        #FFEE55;
+
+@bodyBackground:        @white;
+@textColor:             @grayDark;
+@linkColor:             #08c;
+@linkColorHover:        darken(@linkColor, 15%);
+@horizontalComponentOffset:       180px;
 // ==========================================================================
 
 // Body reset

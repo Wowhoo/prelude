@@ -1,0 +1,13 @@
+.pager {
+  list-style: none outside none;
+}
+.pager li {
+  display: inline-block;
+}
+.pager li > a {
+  display: inline-block;
+  padding: 5px 14px;
+}
+.pager li > a:hover {
+  text-decoration: none;
+}

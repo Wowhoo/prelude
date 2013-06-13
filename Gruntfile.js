@@ -2,91 +2,256 @@
 
 module.exports = function(grunt) {
 
-    // Project configuration.
-    grunt.initConfig({
-        // Metadata.
-        pkg: grunt.file.readJSON('package.json'),
-        banner: '/* <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-        // Task configuration.
-        clean: {
-            files: ['dist']
-        },
-        concat: {
-            options: {
-                banner: '<%= banner %>',
-                stripBanners: true
-            },
-            dist: {
-                files: {
-                  'css/prelude.css':['css/prelude.css'],
-              },
-            },
-        },
-        jshint: {
-            gruntfile: {
-                options: {
-                    jshintrc: '.jshintrc'
-                },
-                src: 'Gruntfile.js'
-            },
-        },
-        watch: {
-            gruntfile: {
-                files: '<%= jshint.gruntfile.src %>',
-                tasks: ['jshint:gruntfile']
-            },
-        },
-        jsbeautifier: {
-            files: ["Gruntfile.js"],
-            options: {
-                "indent_size": 4,
-                "indent_char": " ",
-                "indent_level": 0,
-                "indent_with_tabs": true,
-                "preserve_newlines": true,
-                "max_preserve_newlines": 10,
-                "jslint_happy": false,
-                "brace_style": "collapse",
-                "keep_array_indentation": false,
-                "keep_function_indentation": false,
-                "space_before_conditional": true,
-                "eval_code": false,
-                "indent_case": false,
-                "unescape_strings": false
-            }
-        },
-        less: {
-            skins:{
-              files: {
-                'css/prelude.css':['less/prelude.less'],
-              },
-            }
-        },
-        recess: {
-            skins: {
-                files: {
-                  'css/prelude.css':['less/prelude.less'],
-                },
-                options: {
-                    compile: true
-                }
-            }
-        },
+  var prelude = {
+    common: [
+      'reset',
+      'typography',
+      'forms'
+    ],
+    components: [
+      'alert',
+      'breadcrumbs',
+      'buttons|core,extend',
+      'pager',
+      'pagination',
+      'tables'
+    ],
+    functions: [
+      'grid'
+    ]
+  };
+  var less_build_files = [];
+  var concat_all_files = [];
+  var concat_all_min_files = [];
+  var concat_build_files = [];
+  for(var type in prelude){
+    prelude[type].forEach(function(file){
+      if(file.indexOf('|') !== -1){
+        var file_array = file.split('|');
+        var subfiles = file_array[1].split(',');
+        var folder = file_array[0];
+        var concat_srcs = [];
+        subfiles.forEach(function(subfile){
+          less_build_files.push({
+            src: 'less/'+type+'/'+folder+'/'+folder+'-'+subfile+'.less',
+            dest: 'build/'+type+'/'+folder+'-'+subfile+'.css'
+          });
+          concat_srcs.push('build/'+type+'/'+folder+'-'+subfile+'.css');
+          concat_all_files.push('build/'+type+'/'+folder+'-'+subfile+'.css');
+          concat_all_min_files.push('build/'+type+'/'+folder+'-'+subfile+'-min.css');
+        });
+        concat_build_files.push({
+          src: concat_srcs,
+          dest: 'build/'+type+'/'+folder+'.css'
+        })
+      }else{
+        less_build_files.push({
+          src: 'less/'+type+'/'+file+'/'+file+'.less',
+          dest: 'build/'+type+'/'+file+'.css'
+        });
+
+        concat_all_files.push('build/'+type+'/'+file+'.css');
+        concat_all_min_files.push('build/'+type+'/'+file+'-min.css');
+      }
     });
+  }
+    
+  // Project configuration.
+  grunt.initConfig({
+    // Metadata.
+    pkg: grunt.file.readJSON('package.json'),
 
-    // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-jsbeautifier');
-    grunt.loadNpmTasks('grunt-recess');
-    grunt.loadNpmTasks('grunt-contrib-less');
+    // -- Clean Config ---------------------------------------------------------
 
-    // Default task.
-    grunt.registerTask('default', ['jshint', 'clean', 'recess', 'concat']);
+    clean: {
+        build    : ['build/'],
+        release  : ['release/']
+    },
 
-    grunt.registerTask('js', ['jsbeautifier', 'jshint']);
+    // -- Less Config ----------------------------------------------------------
 
-    grunt.registerTask('css', ['recess', 'concat']);
+    less: {
+      build: {
+        files: less_build_files
+      }
+    },
+
+    // -- Concat Config --------------------------------------------------------
+
+    concat: {
+        build: {
+          files: concat_build_files
+        },
+
+        all: {
+            files: [{
+              dest: 'build/<%= pkg.name %>.css',
+              src: concat_all_files
+            },{
+              dest: 'build/<%= pkg.name %>-min.css',
+              src: concat_all_min_files
+            }]
+        }
+    },
+
+    // -- CSSLint Config -------------------------------------------------------
+
+    csslint: {
+        options: {
+            csslintrc: '.csslintrc'
+        },
+
+        src: {
+            src: [
+                'build/**/*.css'
+            ]
+        }
+    },
+
+    // -- Recess Config --------------------------------------------------------
+
+    recess: {
+        options: {
+          compile: false,
+          compress: false,
+          noIDs: true,
+          noJSPrefix: true,
+          noOverqualifying: true,
+          noUnderscores: true,
+          noUniversalSelectors: true,
+          prefixWhitespace: true,
+          strictPropertyOrder: true,
+          zeroUnits: true  
+        },
+        src: {
+            src: ['less/**/*.less']
+        }
+    },
+
+    // -- CSSMin Config --------------------------------------------------------
+
+    cssmin: {
+        options: {
+            // report: 'gzip'
+        },
+
+        files: {
+            expand: true,
+            src   : 'build/**/*.css',
+            ext   : '-min.css'
+        }
+    },
+
+    // -- Compress Config ------------------------------------------------------
+
+    compress: {
+        release: {
+            options: {
+                archive: 'release/<%= pkg.version %>/<%= pkg.name %>-<%= pkg.version %>.zip'
+            },
+
+            expand : true,
+            flatten: true,
+            src    : 'build/*.css',
+            dest   : '<%= pkg.name %>/'
+        }
+    },
+
+    // -- License Config -------------------------------------------------------
+
+    license: {
+        build: {
+            options: {
+                banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+            },
+
+            expand: true,
+            src   : ['build/*.css']
+        }
+    },
+
+    // -- Watch/Observe Config -------------------------------------------------
+
+    observe: {
+        src: {
+            files: 'less/*/*/*.less',
+            tasks: ['test', 'suppress', 'default'],
+
+            options: {
+                interrupt: true
+            }
+        }
+    }
+  });
+
+  // -- Main Tasks ---------------------------------------------------------------
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-recess');
+
+  grunt.registerTask('default', [
+      'clean:build',
+      'less:build',
+      'concat:build',
+      'cssmin',
+      'concat:all',
+      'license'
+  ]);
+
+  grunt.registerTask('test', [
+      'recess'
+  ]);
+
+  // Makes the `watch` task run a build first.
+  grunt.renameTask('watch', 'observe');
+  grunt.registerTask('watch', ['default', 'observe']);
+
+  grunt.registerTask('release', [
+      'test',
+      'default',
+      'clean:release',
+      'compress:release'
+  ]);
+
+  // -- Suppress Task ------------------------------------------------------------
+
+  grunt.registerTask('suppress', function () {
+      var allowed = ['success', 'fail', 'warn', 'error'];
+
+      grunt.util.hooker.hook(grunt.log, {
+          passName: true,
+
+          pre: function (name) {
+              if (allowed.indexOf(name) === -1) {
+                  grunt.log.muted = true;
+              }
+          },
+
+          post: function () {
+              grunt.log.muted = false;
+          }
+      });
+  });
+
+  // -- License Task -------------------------------------------------------------
+
+  grunt.registerMultiTask('license', 'Stamps license banners on files.', function () {
+      var options = this.options({banner: ''}),
+          banner  = grunt.template.process(options.banner),
+          tally   = 0;
+
+      this.files.forEach(function (filePair) {
+          filePair.src.forEach(function (file) {
+              grunt.file.write(file, banner + grunt.file.read(file));
+              tally += 1;
+          });
+      });
+
+      grunt.log.writeln('Stamped license on ' + String(tally).cyan + ' files.');
+  });
 };

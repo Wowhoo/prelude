@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.button {
+  outline: none;
+}
+.button:focus {
+  outline: none;
+}
+.button:active {
+  outline: none;
+}
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  outline: 0;
+}

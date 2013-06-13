@@ -1,0 +1,33 @@
+@import "init.less";
+// ==========================================================================
+// Buttons Core
+// ==========================================================================
+.button {
+    display: inline-block;
+    .ie7-inline-block();
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+//remove focus dashed
+.button {
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        outline: none;
+    }
+}
+
+.button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    outline: 0;
+}
