@@ -1,0 +1,120 @@
+@import "init.less";
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+.input-prepend,
+.input-append {
+	// font-size: 0;
+	letter-spacing: -4px;
+
+	.is-prepend,
+	.is-append {
+		display: inline-block;
+		padding: 4px 10px;
+		margin-bottom: 0 0 10px;
+		height: 30px;
+		letter-spacing: normal;
+		font-weight: bold;
+		text-align: center;
+		vertical-align: top;
+		border: 1px solid @inputDecorateBorderColor;
+		background: @inputDecorateBgColor;		
+		.box-sizing(border-box);
+	}
+
+	.is-prepend {
+		margin-right: -1px;
+	}
+	.is-append {
+		margin-left: -2px;
+	}
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	height: 30px;
+	padding: 4px 10px;
+	border: 1px solid @formButtonBorderColor;
+	background: @formButtonBgColor;
+
+	&:hover {
+		color: @formButtonHoverColor;
+		text-decoration: none;
+		background: @formButtonHoverBgColor;
+		border: 1px solid @formButtonHoverBorderColor;
+	}
+
+	&:active {
+		border: 1px solid @formButtonActiveBorderColor;
+		background: @formButtonActiveBgColor;
+	}
+}
+ 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea,
+select {
+	padding: 4px;
+	height: 30px;
+	border: 1px solid @inputBorderColor;
+	background: @inputBgColor;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	font-weight: normal;
+}
+
+select {
+	padding: 0;
+	height: auto;
+}
+
+textarea {
+	width: auto;
+	height: auto;
+	min-height: 60px;
+}
+
+label {
+	margin-bottom: 5px;
+}
+
+input.is-error,
+textarea.is-error,
+select.is-error {
+	border-color: @inputErrorBorderColor;
+}
+
+input.is-success,
+textarea.is-success,
+select.is-success {
+	border-color: @inputSuccessBorderColor;
+}
+
+input.is-disabled {
+	background-color: @inputDisabledBgColor;
+	cursor: not-allowed;
+}
+
+input:focus,
+textarea:focus {
+	border-color: @inputBorderColorFocus;
+	color: @inputColorFocus;
+}

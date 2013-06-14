@@ -10,6 +10,17 @@ ul {
     margin-bottom: 10px;
 }
 
+form ul li {
+    margin-bottom: 15px;
+}
+
+form ul li.section {
+    display: block;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 .demoNav {
     position: fixed;
     top: 50px;

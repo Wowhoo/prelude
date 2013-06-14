@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     common: [
       'reset',
       'typography',
-      'forms'
+      'forms|core,extend'
     ],
     components: [
       'alert',
