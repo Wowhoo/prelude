@@ -16,12 +16,12 @@ form li.section {
   display: block;
   margin-bottom: 25px;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 21px;
 }
 form .is-description {
   display: inline-block;
   font-weight: normal;
-  font-size: 11.9px;
+  font-size: 13.6;
   color: #4d4d4d;
   vertical-align: baseline;
 }
@@ -38,7 +38,7 @@ form .is-postfix {
   margin-bottom: 0 0 10px;
   height: 30px;
   letter-spacing: normal;
-  font-size: 14px;
+  font-size: 16;
   font-weight: bold;
   text-align: center;
   border: 1px solid #aaaaaa;
@@ -63,7 +63,7 @@ form input[type="button"] {
   height: 30px;
   display: inline-block;
   padding: 4px 10px;
-  font-size: 14px;
+  font-size: 16;
   letter-spacing: normal;
   font-weight: bold;
   text-decoration: none;
@@ -114,7 +114,7 @@ select {
   max-width: 100%;
   padding: 4px;
   height: 30px;
-  font-size: 14px;
+  font-size: 16;
   letter-spacing: normal;
   border: 1px solid #aaaaaa;
   background: #ffffff;
@@ -145,7 +145,7 @@ textarea {
 label {
   display: block;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 16;
   letter-spacing: normal;
 }
 input.is-error,

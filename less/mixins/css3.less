@@ -37,6 +37,14 @@
   filter: ~"alpha(opacity=@{ieopacity})";
 }
 
+// Placeholder text
+.placeholder(@color) {
+  &:-moz-placeholder            { color: @color; } // Firefox 4-18
+  &::-moz-placeholder           { color: @color; } // Firefox 19+
+  &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+
 // Box sizing
 // ==========================================================================
 
@@ -132,7 +140,7 @@
 
 // Background clipping
 // Heads up: FF 3.6 and under need "padding" instead of "padding-box"
-.background-clip(@clip) {
+.background-clip(@clip: padding-box) {
   -webkit-background-clip: @clip;
      -moz-background-clip: @clip;
           background-clip: @clip;

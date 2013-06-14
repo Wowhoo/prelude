@@ -2,13 +2,20 @@
 // Variables
 // ==========================================================================
 
+// General --------------------------------
+
+@using-ieclasses: true;		// whether or not the markup has html5-boilerplate style IE classes in it or not
+@using-modernizr: false; 	// whether or not modernizer feature-detection classes are being used
+@disable-filters: true; 	// whether or not to disable MS-specific 'filter' properties (can make IE slow!)
+
+
 // Grays
 @black:                 #000;
-@grayDarker:            #222;
-@grayDark:              #333;
+@gray-darker:            #222;
+@gray-dark:              #333;
 @gray:                  #555;
-@grayLight:             #999;
-@grayLighter:           #eee;
+@gray-light:             #999;
+@gray-lighter:           #eee;
 @white:                 #fff;
 
 
@@ -22,16 +29,16 @@
 @pink:                  #c3325f;
 @purple:                #7a43b6;
 
-@baseFontSize:          14px;
-@baseLineHeight:        20px;
-@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
-@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
-@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+@base-fontSize:          16;//px value
+@base-lineHeight:        1.5;
+@fontSize-large:         @base-fontSize * 1.25; // ~18px
+@fontSize-small:         @base-fontSize * 0.85; // ~12px
+@fontSize-mini:          @base-fontSize * 0.75; // ~11px
 
-@paddingLarge:          11px 19px; // 44px
-@paddingSmall:          2px 10px;  // 26px
-@paddingMini:           1px 6px;   // 24px
+@padding-large:          11px 19px; // 44px
+@padding-small:          2px 10px;  // 26px
+@padding-mini:           1px 6px;   // 24px
 
-@baseBorderRadius:      4px;
-@borderRadiusLarge:     6px;
-@borderRadiusSmall:     3px;
+@base-borderRadius:      4px;
+@base-borderRadius-large:     6px;
+@base-borderRadius-small:     3px;

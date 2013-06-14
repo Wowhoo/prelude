@@ -5,10 +5,10 @@
 // Core
 .button {
     padding: 4px 12px;
-    font-size: @baseFontSize;
-    line-height: @baseLineHeight;
-    *line-height: @baseLineHeight;
-    .buttonBackground(@buttonBackground, @buttonBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+    font-size: @base-fontSize;
+    line-height: @base-lineHeight;
+    *line-height: @base-lineHeight;
+    .buttonBackground(@buttonBackground, @buttonBackgroundHighlight, @gray-dark, 0 1px 1px rgba(255,255,255,.75));
     border: 1px solid @buttonBorder;
     // *border: 0; // Remove the border to prevent IE7's black border on input:focus
     border-bottom-color: darken(@buttonBorder, 10%);
@@ -47,21 +47,21 @@
 
     // button size
     &.is-mini {
-        padding: @paddingMini;
-        font-size: @fontSizeMini;
+        padding: @padding-mini;
+        font-size: @fontSize-mini;
     }
     &.is-small {
-        padding: @paddingSmall;
-        font-size: @fontSizeSmall;
+        padding: @padding-small;
+        font-size: @fontSize-small;
     }
     &.is-large {
-        padding: @paddingLarge;
-        font-size: @fontSizeLarge;
+        padding: @padding-large;
+        font-size: @fontSize-large;
     }
 
     //button types
     &.is-radius {
-        .border-radius(@baseBorderRadius);
+        .border-radius(@base-borderRadius);
     }
     &.is-round {
         .border-radius(1000px 1000px 1000px 1000px);
