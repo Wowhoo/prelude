@@ -10,7 +10,3 @@
 .pager li > a:hover {
   text-decoration: none;
 }
-
-.pager li > a {
-  padding: 5px 14px;
-}

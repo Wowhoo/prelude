@@ -124,18 +124,6 @@ h6 {
   font-size: 1rem;
   margin-bottom: .5em;
 }
-h1 small {
-  font-size: 28;
-}
-h2 small {
-  font-size: 20;
-}
-h3 small {
-  font-size: 16;
-}
-h4 small {
-  font-size: 16;
-}
 ul,
 ol {
   padding: 0;
@@ -149,11 +137,6 @@ ol ul {
 }
 li {
   line-height: 1.5;
-}
-ul.is-unstyled,
-ol.is-unstyled {
-  margin-left: 0;
-  list-style: none;
 }
 ol ol li {
   list-style-type: lower-alpha;

@@ -1,0 +1,16 @@
+.breadcrumbs {
+  overflow: hidden;
+}
+.breadcrumbs li {
+  display: inline-block;
+  list-style: none outside none;
+}
+.breadcrumbs .is-current {
+  cursor: default;
+}
+.breadcrumbs.with-divider li:first-child:before {
+  content: " ";
+}
+.breadcrumbs.with-divider li:before {
+  content: "/";
+}

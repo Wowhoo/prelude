@@ -1,0 +1,32 @@
+@import "init.less";
+// ==========================================================================
+// Pagination
+// ==========================================================================
+.pagination {
+    display: block;
+    .box-sizing(border-box);
+
+    li {
+        display: inline-block;
+        float: left;
+        a {
+            display: block;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .is-current a {
+        cursor: default;
+        text-decoration: none;
+    }
+
+    .is-disabled a {
+        cursor: default;
+    }
+}
+
+// .pagination-arrow {
+
+// }

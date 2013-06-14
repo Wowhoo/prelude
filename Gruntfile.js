@@ -10,11 +10,11 @@ module.exports = function(grunt) {
     ],
     components: [
       'alert',
-      'breadcrumbs',
+      'breadcrumbs|core,extend',
       'buttons|core,extend',
-      'pager',
-      'pagination',
-      'tables'
+      'pager|core,extend',
+      'pagination|core,extend',
+      'tables|core,extend'
     ],
     functions: [
       'grid'

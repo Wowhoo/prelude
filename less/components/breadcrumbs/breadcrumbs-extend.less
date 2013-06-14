@@ -1,0 +1,40 @@
+@import "init.less";
+// ==========================================================================
+// Breadcrumbs
+// ==========================================================================
+.breadcrumbs {
+    background: @breakcrumbsBgColor;
+    margin-left: 0;
+    li {
+        margin: 0;
+        padding-right: 8px;
+        color: @breadcrumbsColor;
+    }
+    
+    .is-disabled {
+        color: @gray-light;
+        cursor: @breadcrumbsDisabledColor;
+    }
+
+    .is-current {
+        color: @breadcrumbsCurrentColor;
+    }
+
+    &.with-divider {
+        li {
+            &:first-child:before {
+                padding-right: 0;
+            }
+
+            &:before {
+                color: @breadcrumbsDividerColor;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+.breadcrumbs-divider {
+    padding-left: 8px;
+    color: @breadcrumbsDividerColor;
+}

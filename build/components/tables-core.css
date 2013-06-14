@@ -1,0 +1,12 @@
+.table {
+  max-width: 100%;
+  width: 100%;
+}
+.table th,
+.table td {
+  text-align: left;
+  vertical-align: top;
+}
+.table thead th {
+  vertical-align: bottom;
+}

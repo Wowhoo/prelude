@@ -3,24 +3,17 @@
 // Breadcrumbs
 // ==========================================================================
 .breadcrumbs {
-    background: @breakcrumbsBgColor;
-    margin-left: 0;
     overflow: hidden;
     li {
         display: inline-block;
-        margin: 0;
-        padding-right: 8px;
-        color: @breadcrumbsColor;
         list-style: none outside none;
     }
     
-    .is-disabled {
-        color: @gray-light;
-        cursor: @breadcrumbsDisabledColor;
-    }
+    // .is-disabled {
+
+    // }
 
     .is-current {
-        color: @breadcrumbsCurrentColor;
         cursor: default;
     }
 
@@ -28,19 +21,15 @@
         li {
             &:first-child:before {
                 content: " ";
-                padding-right: 0;
             }
 
             &:before {
-                color: @breadcrumbsDividerColor;
                 content: "/";
-                padding-right: 10px;
             }
         }
     }
 }
 
-.breadcrumbs-divider {
-    padding-left: 8px;
-    color: @breadcrumbsDividerColor;
-}
+// .breadcrumbs-divider {
+
+// }
