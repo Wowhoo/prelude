@@ -10,6 +10,10 @@
   display: inline-block;
   float: left;
 }
+.ie7 .pagination li {
+  display: inline;
+  zoom: 1;
+}
 .pagination li a {
   display: block;
 }

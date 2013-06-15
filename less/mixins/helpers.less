@@ -52,6 +52,10 @@
   *zoom: 1;
 }
 
+.base-border-radius(@radius) when (@radius > 0) {
+  .border-radius(@radius);
+}
+
 // IE7 likes to collapse whitespace on either side of the inline-block elements.
 // Ems because we're attempting to match the width of a space character. Left
 // version is for form buttons, which typically come after other elements, and

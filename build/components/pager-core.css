@@ -4,8 +4,16 @@
 .pager li {
   display: inline-block;
 }
+.ie7 .pager li {
+  display: inline;
+  zoom: 1;
+}
 .pager li > a {
   display: inline-block;
+}
+.ie7 .pager li > a {
+  display: inline;
+  zoom: 1;
 }
 .pager li > a:hover {
   text-decoration: none;

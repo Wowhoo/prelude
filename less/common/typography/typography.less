@@ -73,7 +73,8 @@ a {
 // ==========================================================================
 
 small {
-  font-size: 85%; // Ex: 14px base font * 85% = about 12px
+  // font-size: 0.85rem;
+  .font-size(@base-fontSize*0.85);
 }
 strong, b {
   font-weight: bold;
@@ -85,7 +86,8 @@ cite {
   font-style: normal;
 }
 code {
-  font-size: 90%;
+  font-size: 0.9rem;
+  .font-size(@base-fontSize*0.9);
   background: @codeBackgroude;
   border: 1px solid @gray-light;
   padding: 2px 3px;
@@ -152,10 +154,6 @@ h6 {
   .font-size(@h6-fontSize);
   margin-bottom: .5em;
 }
-// h1 small { font-size: @base-fontSize * 1.75; } // ~24px
-// h2 small { font-size: @base-fontSize * 1.25; } // ~18px
-// h3 small { font-size: @base-fontSize; }
-// h4 small { font-size: @base-fontSize; }
 
 // Lists
 // ==========================================================================
@@ -163,17 +161,14 @@ h6 {
 // Unordered and Ordered lists
 ul, ol {
   padding: 0;
-  margin: 0 0 @base-lineHeight / 2 25px;
+  margin: 0;
+  margin-left: 2rem;
 }
 ul ul,
 ul ol,
 ol ol,
 ol ul {
   margin-bottom: 0;
-}
-
-li {
-  line-height: @base-lineHeight;
 }
 
 ol ol li {
@@ -186,37 +181,20 @@ ol ol ol li {
 
 // Description Lists
 dl {
-  margin-bottom: @base-lineHeight;
-  &.is-horizontal {
-    .clearfix(); // Ensure dl clears floats if empty dd elements present
-    dt {
-      float: left;
-      width: @horizontalComponentOffset - 20;
-      clear: left;
-      text-align: right;
-      .text-overflow();
-    }
-    dd {
-      margin-left: @horizontalComponentOffset;
-    }
-  }
-}
-dt,
-dd {
-  line-height: @base-lineHeight;
+  margin-bottom: 1.5rem;
 }
 dt {
   font-weight: bold;
 }
 dd {
-  margin-left: @base-lineHeight / 2;
+  margin-left: 1rem;
 }
 
 // Horizontal rules
 // ==========================================================================
 
 hr {
-  margin: @base-lineHeight 0;
+  margin: 1rem 0;
   border: 0;
   border-top: 1px solid @gray-lighter;
   border-bottom: 1px solid @white;
@@ -230,49 +208,22 @@ abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted @gray-light;
 }
-abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
-}
 
 // Blockquotes
 // ==========================================================================
 
 blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 @base-lineHeight;
-  border-left: 5px solid @gray-lighter;
+  padding: 0 0 0 1em;
+  margin: 0 0 1.5rem;
   p {
     margin-bottom: 0;
     #font > .shorthand(16px,300,@base-lineHeight * 1.25);
   }
   small {
     display: block;
-    line-height: @base-lineHeight;
     color: @gray-light;
     &:before {
       content: '\2014 \00A0';
-    }
-  }
-
-  // Float right with text-align: right
-  &.pull-right {
-    float: right;
-    padding-right: 15px;
-    padding-left: 0;
-    border-right: 5px solid @gray-lighter;
-    border-left: 0;
-    p,
-    small {
-      text-align: right;
-    }
-    small {
-      &:before {
-        content: '';
-      }
-      &:after {
-        content: '\00A0 \2014';
-      }
     }
   }
 }
@@ -288,8 +239,7 @@ blockquote:after {
 // Addresses
 address {
   display: block;
-  margin-bottom: @base-lineHeight;
+  margin-bottom: 1.5rem;
   font-style: normal;
-  line-height: @base-lineHeight;
 }
 

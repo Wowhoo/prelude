@@ -3,8 +3,14 @@
 // ==========================================================================
 // Alert
 // ==========================================================================
+.alert-warning, .alert-error, .alert-success, .alert-info {
+	padding: 0.5em 1em;
+	margin-bottom: 0.5rem;
+	.base-border-radius(@base-borderRadius);
+}
+
 .alert-warning { 
-	padding: 8px 15px;
+	// padding: 8px 15px;
 	color: @alert-warning-color;
 	background-color: @alert-warning-bgColor;
 	border-color: @alert-warning-borderColor;
@@ -14,7 +20,6 @@
 }
 
 .alert-error {
-	padding: 8px 15px;
 	color: @alert-error-color; 
 	background-color: @alert-error-bgColor;
 	border-color: @alert-error-borderColor;
@@ -24,7 +29,6 @@
 }
 
 .alert-success {
-	padding: 8px 15px;
 	color: @alert-success-color;
 	background-color: @alert-success-bgColor;
 	border-color: @alert-success-borderColor;
@@ -34,7 +38,6 @@
 }
 
 .alert-info {
-	padding: 8px 15px;
 	color: @alert-info-color; 
 	background-color: @alert-info-bgColor;
 	border-color: @alert-info-borderColor;

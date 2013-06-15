@@ -32,7 +32,8 @@ a:active {
   outline: none;
 }
 small {
-  font-size: 85%;
+  font-size: 13.6px;
+  font-size: 0.85rem;
 }
 strong,
 b {
@@ -45,7 +46,8 @@ cite {
   font-style: normal;
 }
 code {
-  font-size: 90%;
+  font-size: 14.4px;
+  font-size: 0.9rem;
   background: #f8f8f8;
   border: 1px solid #999999;
   padding: 2px 3px;
@@ -53,9 +55,9 @@ code {
 kbd {
   background: #f8f8f8;
   border: 1px solid #999999;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   font-weight: normal;
   padding: 0 6px;
   white-space: nowrap;
@@ -127,16 +129,14 @@ h6 {
 ul,
 ol {
   padding: 0;
-  margin: 0 0 0.75 25px;
+  margin: 0;
+  margin-left: 2rem;
 }
 ul ul,
 ul ol,
 ol ol,
 ol ul {
   margin-bottom: 0;
-}
-li {
-  line-height: 1.5;
 }
 ol ol li {
   list-style-type: lower-alpha;
@@ -145,44 +145,16 @@ ol ol ol li {
   list-style-type: lower-roman;
 }
 dl {
-  margin-bottom: 1.5;
-}
-dl.is-horizontal:before,
-dl.is-horizontal:after {
-  content: "";
-  display: table;
-}
-dl.is-horizontal:after {
-  clear: both;
-}
-.ie6 dl.is-horizontal,
-.ie7 dl.is-horizontal {
-  zoom: 1;
-}
-dl.is-horizontal dt {
-  float: left;
-  width: 160px;
-  clear: left;
-  text-align: right;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-dl.is-horizontal dd {
-  margin-left: 180px;
-}
-dt,
-dd {
-  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 dt {
   font-weight: bold;
 }
 dd {
-  margin-left: 0.75;
+  margin-left: 1rem;
 }
 hr {
-  margin: 1.5 0;
+  margin: 1rem 0;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #ffffff;
@@ -192,14 +164,9 @@ abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #999999;
 }
-abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
-}
 blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 1.5;
-  border-left: 5px solid #eeeeee;
+  padding: 0 0 0 1em;
+  margin: 0 0 1.5rem;
 }
 blockquote p {
   margin-bottom: 0;
@@ -209,28 +176,10 @@ blockquote p {
 }
 blockquote small {
   display: block;
-  line-height: 1.5;
   color: #999999;
 }
 blockquote small:before {
   content: '\2014 \00A0';
-}
-blockquote.pull-right {
-  float: right;
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid #eeeeee;
-  border-left: 0;
-}
-blockquote.pull-right p,
-blockquote.pull-right small {
-  text-align: right;
-}
-blockquote.pull-right small:before {
-  content: '';
-}
-blockquote.pull-right small:after {
-  content: '\00A0 \2014';
 }
 q:before,
 q:after,
@@ -240,7 +189,6 @@ blockquote:after {
 }
 address {
   display: block;
-  margin-bottom: 1.5;
+  margin-bottom: 1.5rem;
   font-style: normal;
-  line-height: 1.5;
 }

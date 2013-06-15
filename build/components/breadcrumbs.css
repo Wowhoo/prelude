@@ -5,6 +5,10 @@
   display: inline-block;
   list-style: none outside none;
 }
+.ie7 .breadcrumbs li {
+  display: inline;
+  zoom: 1;
+}
 .breadcrumbs .is-current {
   cursor: default;
 }
