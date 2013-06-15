@@ -7,13 +7,15 @@
 
 .table {    
     margin-bottom: @base-lineHeight;
-    background-color: @tableBackground;
+    background-color: @table-bgColor;
     // Cells
     th,
     td {
-        padding: 8px;
+        // padding: 8px;
+        padding: 0.5em;
         line-height: @base-lineHeight;
-        border-top: 1px solid @tableBorder;
+        *line-height: @base-lineHeight;
+        border-top: 1px solid @table-borerColor;
     }
     th {
         font-weight: bold;
@@ -29,7 +31,7 @@
     }
     // Account for multiple tbody instances
     tbody + tbody {
-        border-top: 2px solid @tableBorder;
+        border-top: 2px solid @table-borerColor;
     }
 
     //Simple Table
@@ -45,7 +47,7 @@
         tbody {
             tr:nth-child(odd) td,
             tr:nth-child(odd) th {
-                background-color: @tableBackgroundAccent;
+                background-color: @table-accent-bgColor;
             }
         }
     }
@@ -54,13 +56,13 @@
     // ----------------
 
     &.is-bordered {
-        border: 1px solid @tableBorder;
+        border: 1px solid @table-borerColor;
         border-collapse: separate; // Done so we can round those corners!
         // *border-collapse: collapse; // IE7 can't round corners anyway
         border-left: 0;
         th,
         td {
-            border-left: 1px solid @tableBorder;
+            border-left: 1px solid @table-borerColor;
         }
         // Prevent a double border
         caption + thead tr:first-child th,
@@ -81,7 +83,7 @@
         tbody {
             tr:hover td,
             tr:hover th {
-                background-color: @tableBackgroundHover;
+                background-color: @table-hover-bgColor;
             }
         }
     }
@@ -90,16 +92,17 @@
     &.is-condensed {
         th,
         td {
-            padding: 4px 5px;
+            // padding: 4px 5px;
+            padding: 0.3em 0.4em;
         }
     }
 
     //Sortable Table
     &.is-sortable {
-        border: 1px solid @tableBorder;
+        border: 1px solid @table-borerColor;
         thead {
             th {
-                border-right: 1px solid @tableBorder;
+                border-right: 1px solid @table-borerColor;
                 cursor: pointer;
                 left: 0;
                 position: relative;

@@ -1,4 +1,4 @@
-/*! Prelude - v0.1.0 - 2013-06-15
+/*! Prelude - v0.1.0 - 2013-06-16
 * https://github.com/amazingSurge/prelude
 * Copyright (c) 2013 amazingSurge; Licensed GPL */
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -411,7 +411,7 @@ kbd {
   -moz-border-radius: 2px;
   border-radius: 2px;
   font-weight: normal;
-  padding: 0 6px;
+  padding: 0 0.5em;
   white-space: nowrap;
 }
 del {
@@ -482,6 +482,7 @@ ul,
 ol {
   padding: 0;
   margin: 0;
+  margin-left: 32px;
   margin-left: 2rem;
 }
 ul ul,
@@ -497,16 +498,21 @@ ol ol ol li {
   list-style-type: lower-roman;
 }
 dl {
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
 }
 dt {
   font-weight: bold;
 }
 dd {
+  margin-left: 16px;
   margin-left: 1rem;
 }
 hr {
-  margin: 1rem 0;
+  margin-top: 16px;
+  margin-top: 1rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #ffffff;
@@ -518,7 +524,8 @@ abbr[data-original-title] {
 }
 blockquote {
   padding: 0 0 0 1em;
-  margin: 0 0 1.5rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 blockquote p {
   margin-bottom: 0;
@@ -541,6 +548,7 @@ blockquote:after {
 }
 address {
   display: block;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
   font-style: normal;
 }
@@ -636,9 +644,8 @@ label {
 .input-prepend .is-append,
 .input-append .is-append {
   display: inline-block;
-  padding: 4px 10px;
-  margin-bottom: 0 0 10px;
-  height: 30px;
+  padding: 0.3em 0.6em;
+  height: 2em;
   letter-spacing: normal;
   font-weight: bold;
   text-align: center;
@@ -651,9 +658,16 @@ label {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
+.ie7 .input-prepend .is-prepend,
+.ie7 .input-append .is-prepend,
+.ie7 .input-prepend .is-append,
+.ie7 .input-append .is-append {
+  display: inline;
+  zoom: 1;
+}
 .input-prepend .is-prepend,
 .input-append .is-prepend {
-  margin-right: -1px;
+  margin-right: -2px;
 }
 .input-prepend .is-append,
 .input-append .is-append {
@@ -663,10 +677,13 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  height: 30px;
-  padding: 4px 10px;
+  height: 2em;
+  padding: 0.3em 0.6em;
   border: 1px solid #b3b3b3;
   background: #eeeeee;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 button:hover,
 input[type="submit"]:hover,
@@ -701,8 +718,8 @@ input[type="tel"],
 input[type="color"],
 textarea,
 select {
-  padding: 4px;
-  height: 30px;
+  padding: 0.3em;
+  height: 2em;
   border: 1px solid #aaaaaa;
   background: #ffffff;
 }
@@ -717,10 +734,11 @@ select {
 textarea {
   width: auto;
   height: auto;
-  min-height: 60px;
+  min-height: 4em;
 }
 label {
-  margin-bottom: 5px;
+  margin-bottom: 5.28px;
+  margin-bottom: 0.33rem;
 }
 input.is-error,
 textarea.is-error,
@@ -812,7 +830,7 @@ textarea:focus {
 }
 .breadcrumbs li {
   margin: 0;
-  padding-right: 8px;
+  padding-right: 0.5em;
   color: #595959;
 }
 .breadcrumbs .is-disabled {
@@ -827,10 +845,10 @@ textarea:focus {
 }
 .breadcrumbs.with-divider li:before {
   color: #a6a6a6;
-  padding-right: 10px;
+  padding-right: 0.6em;
 }
 .breadcrumbs-divider {
-  padding-left: 8px;
+  padding-left: 0.5em;
   color: #a6a6a6;
 }
 
@@ -865,8 +883,7 @@ textarea:focus {
 }
 
 .button {
-  padding: 4px 12px;
-  font-size: 16;
+  padding: 0.3em 0.8em;
   line-height: 1.5;
   *line-height: 1.5;
   color: #333333;
@@ -887,6 +904,9 @@ textarea:focus {
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 .button:hover,
 .button:active,
@@ -943,9 +963,9 @@ textarea:focus {
   font-size: 20;
 }
 .button.is-radius {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 .button.is-round {
   -webkit-border-radius: 1000px 1000px 1000px 1000px;
@@ -957,8 +977,13 @@ textarea:focus {
 }
 .button-group {
   display: inline-block;
-  margin-right: 2px;
+  margin-right: 5.28px;
+  margin-right: 0.33rem;
   vertical-align: bottom;
+}
+.ie7 .button-group {
+  display: inline;
+  zoom: 1;
 }
 .button-group:after {
   clear: both;
@@ -996,7 +1021,7 @@ textarea:focus {
 }
 
 .pager li > a {
-  padding: 5px 14px;
+  padding: 0.4em 1em;
 }
 
 .pagination {
@@ -1006,6 +1031,18 @@ textarea:focus {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
+}
+.pagination:before,
+.pagination:after {
+  content: "";
+  display: table;
+}
+.pagination:after {
+  clear: both;
+}
+.ie6 .pagination,
+.ie7 .pagination {
+  zoom: 1;
 }
 .pagination li {
   display: inline-block;
@@ -1030,17 +1067,20 @@ textarea:focus {
 }
 
 .pagination {
-  margin-left: -5px;
+  margin-left: -5.28px;
+  margin-left: -0.33rem;
 }
 .pagination li {
   color: #999999;
   font-size: 16;
-  margin-left: 5px;
+  margin-left: 5.28px;
+  margin-left: 0.33rem;
 }
 .pagination li a {
-  padding: 1px 7px;
+  padding: 0.1em 0.5em;
 }
 .pagination li a:hover {
+  color: #999999;
   background-color: #ffffff;
 }
 .pagination .is-current a {
@@ -1083,8 +1123,9 @@ textarea:focus {
 }
 .table th,
 .table td {
-  padding: 8px;
+  padding: 0.5em;
   line-height: 1.5;
+  *line-height: 1.5;
   border-top: 1px solid #dddddd;
 }
 .table th {
@@ -1135,7 +1176,7 @@ textarea:focus {
 }
 .table.is-condensed th,
 .table.is-condensed td {
-  padding: 4px 5px;
+  padding: 0.3em 0.4em;
 }
 .table.is-sortable {
   border: 1px solid #dddddd;

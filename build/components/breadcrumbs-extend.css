@@ -4,7 +4,7 @@
 }
 .breadcrumbs li {
   margin: 0;
-  padding-right: 8px;
+  padding-right: 0.5em;
   color: #595959;
 }
 .breadcrumbs .is-disabled {
@@ -19,9 +19,9 @@
 }
 .breadcrumbs.with-divider li:before {
   color: #a6a6a6;
-  padding-right: 10px;
+  padding-right: 0.6em;
 }
 .breadcrumbs-divider {
-  padding-left: 8px;
+  padding-left: 0.5em;
   color: #a6a6a6;
 }

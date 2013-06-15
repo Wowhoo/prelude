@@ -17,8 +17,9 @@
 }
 .table th,
 .table td {
-  padding: 8px;
+  padding: 0.5em;
   line-height: 1.5;
+  *line-height: 1.5;
   border-top: 1px solid #dddddd;
 }
 .table th {
@@ -69,7 +70,7 @@
 }
 .table.is-condensed th,
 .table.is-condensed td {
-  padding: 4px 5px;
+  padding: 0.3em 0.4em;
 }
 .table.is-sortable {
   border: 1px solid #dddddd;

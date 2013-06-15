@@ -2,30 +2,6 @@
 // ==========================================================================
 // Typography
 // ==========================================================================
-@fontFamily-sans:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-@fontFamily-serif:       Georgia, "Times New Roman", Times, serif;
-@fontFamily-mono:        Monaco, Menlo, Consolas, "Courier New", monospace;
-
-
-@base-fontFamily:        @fontFamily-sans;
-@alt-fontFamily:         @fontFamily-serif;
-
-@codeBackgroude:        #F8F8F8;
-@codeBorder:            #DDDDDD;
-@markBackground:        #FFEE55;
-
-@h1-fontSize: @base-fontSize*2.5;
-@h2-fontSize: @base-fontSize*2;
-@h3-fontSize: @base-fontSize*1.625;
-@h4-fontSize: @base-fontSize*1.25;
-@h5-fontSize: @base-fontSize*1.125;
-@h6-fontSize: @base-fontSize*1;
-
-@textColor:             @gray-dark;
-@linkColor:             #08c;
-@linkColorHover:        darken(@linkColor, 15%);
-@horizontalComponentOffset:       180px;
-// ==========================================================================
 
 // Body reset
 // ==========================================================================
@@ -54,7 +30,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: @linkColorHover;
+  color: @hover-linkColor;
   text-decoration: underline;
 }
 
@@ -73,7 +49,6 @@ a {
 // ==========================================================================
 
 small {
-  // font-size: 0.85rem;
   .font-size(@base-fontSize*0.85);
 }
 strong, b {
@@ -86,19 +61,18 @@ cite {
   font-style: normal;
 }
 code {
-  font-size: 0.9rem;
   .font-size(@base-fontSize*0.9);
-  background: @codeBackgroude;
+  background: @code-bgColor;
   border: 1px solid @gray-light;
   padding: 2px 3px;
 }
 
 kbd {
-    background: @codeBackgroude;
+    background: @code-bgColor;
     border: 1px solid @gray-light;
     .border-radius(@base-borderRadius);
     font-weight: normal;
-    padding: 0 6px;
+    padding: 0 0.5em;
     white-space: nowrap;
 }
 del {
@@ -114,7 +88,7 @@ sub {
     bottom: -0.25em;
 }
 mark {
-    background-color: @markBackground;
+    background-color: @mark-bgColor;
 }
 
 // Headings
@@ -162,7 +136,8 @@ h6 {
 ul, ol {
   padding: 0;
   margin: 0;
-  margin-left: 2rem;
+  // margin-left: 2rem;
+  .px-to-rem('margin-left', @base-fontSize * 2 );
 }
 ul ul,
 ul ol,
@@ -181,20 +156,24 @@ ol ol ol li {
 
 // Description Lists
 dl {
-  margin-bottom: 1.5rem;
+  // margin-bottom: 1.5rem;
+  .px-to-rem('margin-bottom', @base-fontSize * 1.5 );
 }
 dt {
   font-weight: bold;
 }
 dd {
   margin-left: 1rem;
+  .px-to-rem('margin-left', @base-fontSize);
 }
 
 // Horizontal rules
 // ==========================================================================
 
 hr {
-  margin: 1rem 0;
+  // margin: 1rem 0;
+  .px-to-rem('margin-top', @base-fontSize);
+  .px-to-rem('margin-bottom', @base-fontSize);
   border: 0;
   border-top: 1px solid @gray-lighter;
   border-bottom: 1px solid @white;
@@ -214,7 +193,8 @@ abbr[data-original-title] {
 
 blockquote {
   padding: 0 0 0 1em;
-  margin: 0 0 1.5rem;
+  // margin: 0 0 1.5rem;
+  .px-to-rem('margin-bottom', @base-fontSize * 1.5);
   p {
     margin-bottom: 0;
     #font > .shorthand(16px,300,@base-lineHeight * 1.25);
@@ -239,7 +219,8 @@ blockquote:after {
 // Addresses
 address {
   display: block;
-  margin-bottom: 1.5rem;
+  // margin-bottom: 1.5rem;
+  .px-to-rem('margin-bottom', @base-fontSize * 1.5);
   font-style: normal;
 }
 

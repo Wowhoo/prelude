@@ -6,6 +6,18 @@
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
+.pagination:before,
+.pagination:after {
+  content: "";
+  display: table;
+}
+.pagination:after {
+  clear: both;
+}
+.ie6 .pagination,
+.ie7 .pagination {
+  zoom: 1;
+}
 .pagination li {
   display: inline-block;
   float: left;

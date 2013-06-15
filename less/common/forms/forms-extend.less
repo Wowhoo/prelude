@@ -5,26 +5,28 @@
 
 .input-prepend,
 .input-append {
-	// font-size: 0;
 	letter-spacing: -4px;
 
 	.is-prepend,
 	.is-append {
-		display: inline-block;
-		padding: 4px 10px;
-		margin-bottom: 0 0 10px;
-		height: 30px;
+		.inline-block();
+		// padding: 4px 10px;
+		// margin-bottom: 0 0 10px;
+		padding: 0.3em 0.6em;
+		// .px-to-rem('margin-bottom', @base-fontSize * 0.6);
+		// height: 30px;
+		height: 2em;
 		letter-spacing: normal;
 		font-weight: bold;
 		text-align: center;
 		vertical-align: top;
-		border: 1px solid @inputDecorateBorderColor;
-		background: @inputDecorateBgColor;		
+		border: 1px solid @input-decorate-borderColor;
+		background: @input-decorate-bgColor;		
 		.box-sizing(border-box);
 	}
 
 	.is-prepend {
-		margin-right: -1px;
+		margin-right: -2px;
 	}
 	.is-append {
 		margin-left: -2px;
@@ -35,21 +37,24 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	height: 30px;
-	padding: 4px 10px;
-	border: 1px solid @formButtonBorderColor;
-	background: @formButtonBgColor;
+	// height: 30px;
+	// padding: 4px 10px;
+	height: 2em;
+	padding: 0.3em 0.6em;
+	border: 1px solid @formButton-borderColor;
+	background: @formButton-bgColor;
+	.border-radius(@form-borderRadius);
 
 	&:hover {
-		color: @formButtonHoverColor;
+		color: @formButton-hover-textColor;
 		text-decoration: none;
-		background: @formButtonHoverBgColor;
-		border: 1px solid @formButtonHoverBorderColor;
+		background: @formButton-hover-bgColor;
+		border: 1px solid @formButton-hover-borderColor;
 	}
 
 	&:active {
-		border: 1px solid @formButtonActiveBorderColor;
-		background: @formButtonActiveBgColor;
+		border: 1px solid @formButton-active-borderColor;
+		background: @formButton-active-bgColor;
 	}
 }
  
@@ -70,10 +75,13 @@ input[type="tel"],
 input[type="color"],
 textarea,
 select {
-	padding: 4px;
-	height: 30px;
-	border: 1px solid @inputBorderColor;
-	background: @inputBgColor;
+	// padding: 4px;
+	padding: 0.3em;
+	// height: 30px;
+	height: 2em;
+	border: 1px solid @input-borderColor;
+	background: @input-bgColor;
+	// .border-radius(@form-borderRadius);
 }
 
 input[type="checkbox"],
@@ -89,32 +97,34 @@ select {
 textarea {
 	width: auto;
 	height: auto;
-	min-height: 60px;
+	// min-height: 60px;
+	min-height: 4em;
 }
 
 label {
-	margin-bottom: 5px;
+	// margin-bottom: 5px;
+	.px-to-rem('margin-bottom', @base-fontSize * 0.33);
 }
 
 input.is-error,
 textarea.is-error,
 select.is-error {
-	border-color: @inputErrorBorderColor;
+	border-color: @input-error-borderColor;
 }
 
 input.is-success,
 textarea.is-success,
 select.is-success {
-	border-color: @inputSuccessBorderColor;
+	border-color: @input-success-borderColor;
 }
 
 input.is-disabled {
-	background-color: @inputDisabledBgColor;
+	background-color: @input-disable-bgColor;
 	cursor: not-allowed;
 }
 
 input:focus,
 textarea:focus {
-	border-color: @inputBorderColorFocus;
-	color: @inputColorFocus;
+	border-color: @input-focus-borderColor;
+	color: @input-focus-textColor;
 }

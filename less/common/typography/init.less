@@ -2,21 +2,26 @@
 // ==========================================================================
 // Variables
 // ==========================================================================
-@inputFontSize:                        @base-fontSize;
-@inputBorderColor:                     #aaa;
-@inputBgColor:                         @white;
-@inputDecorateBorderColor:             #aaa;
-@inputDecorateBgColor:                 @gray-lighter;
-@inputErrorBorderColor:                lighten(@red,20%);
-@inputSuccessBorderColor:              @green;
-@inputDisabledBgColor:                 #ccc;
-@inputBorderColorFocus:                @blue;
-@inputColorFocus:                      #444;
-@inputDescriptionColor:                lighten(@gray-dark,10%);
-@formButtonBorderColor:                lighten(@gray-light,10%);
-@formButtonBgColor:                    @gray-lighter;
-@formButtonHoverColor:                 @gray-darker;
-@formButtonHoverBgColor:               lighten(@gray-light,30%);
-@formButtonHoverBorderColor:           darken(@gray-light,10%);
-@formButtonActiveBorderColor:          lighten(@gray,10%);
-@formButtonActiveBgColor:              lighten(@gray-light,20%);
+@fontFamily-sans:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@fontFamily-serif:       Georgia, "Times New Roman", Times, serif;
+@fontFamily-mono:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+
+@base-fontFamily:        @fontFamily-sans;
+@alt-fontFamily:         @fontFamily-serif;
+
+@code-bgColor:           #F8F8F8;
+@code-borderColor:       #DDDDDD;
+@mark-bgColor:           #FFEE55;
+
+@h1-fontSize: @base-fontSize*2.5;
+@h2-fontSize: @base-fontSize*2;
+@h3-fontSize: @base-fontSize*1.625;
+@h4-fontSize: @base-fontSize*1.25;
+@h5-fontSize: @base-fontSize*1.125;
+@h6-fontSize: @base-fontSize*1;
+
+@textColor:              @gray-dark;
+@linkColor:              #08c;
+@hover-linkColor:        darken(@linkColor, 15%);
+// @horizontalComponentOffset:       180px;

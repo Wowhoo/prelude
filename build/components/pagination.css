@@ -6,6 +6,18 @@
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
+.pagination:before,
+.pagination:after {
+  content: "";
+  display: table;
+}
+.pagination:after {
+  clear: both;
+}
+.ie6 .pagination,
+.ie7 .pagination {
+  zoom: 1;
+}
 .pagination li {
   display: inline-block;
   float: left;
@@ -29,17 +41,20 @@
 }
 
 .pagination {
-  margin-left: -5px;
+  margin-left: -5.28px;
+  margin-left: -0.33rem;
 }
 .pagination li {
   color: #999999;
   font-size: 16;
-  margin-left: 5px;
+  margin-left: 5.28px;
+  margin-left: 0.33rem;
 }
 .pagination li a {
-  padding: 1px 7px;
+  padding: 0.1em 0.5em;
 }
 .pagination li a:hover {
+  color: #999999;
   background-color: #ffffff;
 }
 .pagination .is-current a {
