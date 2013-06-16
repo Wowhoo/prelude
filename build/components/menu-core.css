@@ -9,6 +9,6 @@
   display: none;
   list-style: none;
 }
-.menu li.menu_sub:hover > ul {
+.menu .menu_sub:hover > ul {
   display: block;
 }

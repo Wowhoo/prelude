@@ -1,0 +1,35 @@
+.label {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  line-height: 1;
+  background-color: #999999;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.label_success {
+  background-color: lightgreen;
+}
+.label_warning {
+  background-color: orange;
+}
+.label_important {
+  background-color: darkred;
+}
+.label_info {
+  background-color: lightblue;
+}
+.label_inverse {
+  background-color: black;
+}
+.label_primary {
+  background-color: green;
+}
+.label_danger {
+  background-color: red;
+}

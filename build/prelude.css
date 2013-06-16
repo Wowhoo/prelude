@@ -1,4 +1,4 @@
-/*! Prelude - v0.1.0 - 2013-06-16
+/*! Prelude - v0.1.0 - 2013-06-17
 * https://github.com/amazingSurge/prelude
 * Copyright (c) 2013 amazingSurge; Licensed GPL */
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -803,6 +803,7 @@ textarea:focus {
   color: #2d6987;
 }
 
+
 .breadcrumbs {
   overflow: hidden;
 }
@@ -1188,18 +1189,77 @@ textarea:focus {
   display: none;
   list-style: none;
 }
-.menu li.menu_sub:hover > ul {
+.menu .menu_sub:hover > ul {
   display: block;
 }
 
-.menu {
-  list-style: none;
-}
 .menu a {
-  display: block;
-  text-decoration: none;
+  padding: 4px 15px;
+  color: black;
+  background-color: #cbcbcb;
 }
-.menu .menu_sub:hover > ul {
+.menu .menu_sub > a {
+  color: #fff;
+  background-color: #999;
+}
+.menu li:hover > a {
+  color: #fff;
+  background-color: lightblue;
+}
+.menu .menu_sub:hover > a {
+  color: #333;
+  background-color: #ebebeb;
+}
+.menu .menu_header > a {
+  color: #aaa;
+}
+.menu .menu_header:hover > a {
+  color: #aaa;
+}
+.menu_horizontal > li {
+  display: inline-block;
+}
+.menu_horizontal ul {
+  padding: 0;
+  margin: 0;
+}
+.menu_horizontal .menu_sub {
+  position: relative;
+}
+.menu_horizontal .menu_sub ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+.menu_horizontal .menu_sub .menu_sub ul {
+  top: 0;
+  left: 100%;
+}
+.menu_list a {
+  text-align: left;
+}
+
+.tabs {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none outside none;
+}
+.tabs li {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.panes {
+  display: block;
+}
+.panes > div {
+  display: none;
+}
+.panes .tab_active {
   display: block;
 }
 
@@ -1226,7 +1286,7 @@ textarea:focus {
   background-color: #e0e0e0;
   cursor: pointer;
 }
-.tabs .tabs_ctive {
+.tabs .tab_active {
   background-color: #fff;
   border-bottom-color: transparent;
 }
@@ -1240,48 +1300,59 @@ textarea:focus {
 .panes > div {
   display: none;
 }
-.panes .tabs_active {
+.panes .tab_active {
   display: block;
 }
 
-.tabs {
-  margin: 0;
-  padding: 0;
-  height: 32px;
-  border-bottom: 1px solid #666666;
-  list-style: none outside none;
+.progress {
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #F7F7F7;
+}
+.progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  background-color: #0E90D2;
   -moz-box-sizing: border-box;
 }
-.tabs .tabs li {
-  float: left;
-  border: 1px solid #252525;
-  display: block;
-  color: #333333;
-  font-size: 12px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  text-decoration: none;
-  width: 138px;
-  border-radius: 6px 6px 0 0;
-  background-color: #e0e0e0;
-  cursor: pointer;
+
+.label {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  line-height: 1;
+  background-color: #999999;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  vertical-align: baseline;
+  white-space: nowrap;
 }
-.tabs .tabs_ctive {
-  background-color: #fff;
-  border-bottom-color: transparent;
+
+.label_success {
+  background-color: lightgreen;
 }
-.panes {
-  padding: 15px;
-  border-right: 1px solid #252525;
-  border-bottom: 1px solid #252525;
-  border-left: 1px solid #252525;
-  border-radius: 0 0 6px 6px;
+.label_warning {
+  background-color: orange;
 }
-.panes div {
-  display: none;
+.label_important {
+  background-color: darkred;
 }
-.panes .tabs_active {
-  display: block;
+.label_info {
+  background-color: lightblue;
+}
+.label_inverse {
+  background-color: black;
+}
+.label_primary {
+  background-color: green;
+}
+.label_danger {
+  background-color: red;
 }
 

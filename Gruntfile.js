@@ -10,13 +10,16 @@ module.exports = function(grunt) {
     ],
     components: [
       'alert',
+      'icon',
       'breadcrumbs|core,extend',
       'buttons|core,extend',
       'pager|core,extend',
       'pagination|core,extend',
       'tables|core,extend',
       'menu|core,extend',
-      'tab|core,extend'
+      'tab|core,extend',
+      'progress|core',
+      'label|core,extend'
     ],
     functions: [
       'grid'

@@ -1,3 +1,6 @@
+@import "init.less";
+// ==========================================================================
+
 .tabs {
 	margin: 0;
 	padding: 0;
@@ -6,7 +9,7 @@
 	list-style: none outside none;
 	-moz-box-sizing: border-box;
 
-	.tabs li {
+	li {
 		float: left;
 		border: 1px solid #252525;
 		display: block;
@@ -21,7 +24,7 @@
 		background-color: #e0e0e0;
 		cursor: pointer;
 	}
-	.tabs_ctive {
+	.tab_active {
 		background-color: #fff;
 		border-bottom-color: transparent;
 	}
@@ -34,10 +37,16 @@
 	border-left: 1px solid #252525;
 	border-radius: 0 0 6px 6px;
 
-	div {
+	> div {
 		display: none;
 	}
-	.tabs_active {
+	.tab_active {
 		display: block;
 	}
 } 
+
+
+
+
+//.tab_nav , .tab_slide ,.tab_direction(top/bottom/left/right)
+//.tab_sub and so on

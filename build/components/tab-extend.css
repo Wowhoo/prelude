@@ -6,7 +6,7 @@
   list-style: none outside none;
   -moz-box-sizing: border-box;
 }
-.tabs .tabs li {
+.tabs li {
   float: left;
   border: 1px solid #252525;
   display: block;
@@ -21,7 +21,7 @@
   background-color: #e0e0e0;
   cursor: pointer;
 }
-.tabs .tabs_ctive {
+.tabs .tab_active {
   background-color: #fff;
   border-bottom-color: transparent;
 }
@@ -32,9 +32,9 @@
   border-left: 1px solid #252525;
   border-radius: 0 0 6px 6px;
 }
-.panes div {
+.panes > div {
   display: none;
 }
-.panes .tabs_active {
+.panes .tab_active {
   display: block;
 }
