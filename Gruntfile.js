@@ -14,7 +14,9 @@ module.exports = function(grunt) {
       'buttons|core,extend',
       'pager|core,extend',
       'pagination|core,extend',
-      'tables|core,extend'
+      'tables|core,extend',
+      'menu|core,extend',
+      'tab|core,extend'
     ],
     functions: [
       'grid'

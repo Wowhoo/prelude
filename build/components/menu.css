@@ -1,0 +1,25 @@
+.menu {
+  list-style: none;
+}
+.menu a {
+  display: block;
+  text-decoration: none;
+}
+.menu ul {
+  display: none;
+  list-style: none;
+}
+.menu li.menu_sub:hover > ul {
+  display: block;
+}
+
+.menu {
+  list-style: none;
+}
+.menu a {
+  display: block;
+  text-decoration: none;
+}
+.menu .menu_sub:hover > ul {
+  display: block;
+}
