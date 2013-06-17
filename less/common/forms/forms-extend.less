@@ -32,30 +32,33 @@
 	}
 }
 
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-	// height: 30px;
-	// padding: 4px 10px;
-	height: 2em;
-	padding: 0.3em 0.6em;
-	border: 1px solid @formButton-borderColor;
-	background: @formButton-bgColor;
-	.border-radius(@form-borderRadius);
+form {
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		// height: 30px;
+		// padding: 4px 10px;
+		height: 2em;
+		padding: 0.3em 0.6em;
+		border: 1px solid @formButton-borderColor;
+		background: @formButton-bgColor;
+		.border-radius(@form-borderRadius);
 
-	&:hover {
-		color: @formButton-hover-textColor;
-		text-decoration: none;
-		background: @formButton-hover-bgColor;
-		border: 1px solid @formButton-hover-borderColor;
-	}
+		&:hover {
+			color: @formButton-hover-textColor;
+			text-decoration: none;
+			background: @formButton-hover-bgColor;
+			border: 1px solid @formButton-hover-borderColor;
+		}
 
-	&:active {
-		border: 1px solid @formButton-active-borderColor;
-		background: @formButton-active-bgColor;
+		&:active {
+			border: 1px solid @formButton-active-borderColor;
+			background: @formButton-active-bgColor;
+		}
 	}
 }
+
  
 input[type="text"],
 input[type="password"],
