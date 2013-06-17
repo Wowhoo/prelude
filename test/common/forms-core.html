@@ -30,113 +30,112 @@
     </style>
 </head>
 <body>
-	<div class="type-test" id="form">
-        <form>
-            <ul>
-                <li class="section">Regular Input</li>
-                <li>
-                    <label for="textfield">Text Field</label>
+
+    <form>
+        <ul>
+            <li class="section">Regular Input</li>
+            <li>
+                <label for="textfield">Text Field</label>
+                <input type="text" />
+            </li>
+            
+            <li>
+                <label for="placeholder">Placeholder</label>
+                <input type="text" placeholder="Placeholder Text" />
+            </li>
+
+            <li>
+                <label class="disabled" for="disabledField">Disabled Field</label>
+                <input type="text" disabled="disabled" class="input_disabled">
+            </li>
+
+            <li>
+                <label class="success" for="textField(Success)">Text Field (Success)</label>
+                <input type="text" class="input_success" />
+            </li>
+
+            <li>
+                <label class="error" for="textField(Error)">Text Field (Error)</label>
+                <input type="text" class="input_error" />
+            </li>
+
+
+            <li class="section">Input With a decorate(button,prefix,postfix)</li>
+            <li>
+                <label for="">Input With a prefix</label>
+                <div class="input-wrap">
+                    <span class="input_prefix">#</span>
                     <input type="text" />
-                </li>
-                
-                <li>
-                    <label for="placeholder">Placeholder</label>
-                    <input type="text" placeholder="Placeholder Text" />
-                </li>
+                </div>
+            </li>
+            <li>
+                <label for="">Input With a postfix</label>
+                 <div class="input-wrap">
+                    <input type="text" />
+                    <span class="input_postfix">.com</span>
+                </div>
+            </li>
 
-                <li>
-                    <label class="disabled" for="disabledField">Disabled Field</label>
-                    <input type="text" disabled="disabled" class="is-disabled">
-                </li>
+            <li class="section">Select</li>
+            <li>
+                <label for="selectList">Select List</label>
+                <select>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                    <option value="Option 4">Option 4</option>
+                </select>
+            </li>
 
-                <li>
-                    <label class="success" for="textField(Success)">Text Field (Success)</label>
-                    <input type="text" class="is-success" />
-                </li>
+            <li class="section">Checkboxes</li>
+            <li>
+                <label for="regularCheckbox">
+                    <input type="checkbox" value="checkbox 1" id="regularCheckbox" />
+                    <span>Regular Checkbox</span>
+                </label>
+            </li>
 
-                <li>
-                    <label class="error" for="textField(Error)">Text Field (Error)</label>
-                    <input type="text" class="is-error" />
-                </li>
+            <li>
+                <label for="secondRegularCheckbox">
+                    <input type="checkbox" value="checkbox 2" id="secondRegularCheckbox" />
+                    <span>Regular Checkbox</span>
+                </label>
+            </li>
 
+            <li class="section">Radio Buttons</li>
+            <li>
+                <label for="regularRadio">
+                    <input type="radio" value="radio 1" id="regularRadio" name="radios" />
+                    <span>Regular Radio</span>
+                </label>
+            </li>
 
-                <li class="section">Input With a decorate(button,prefix,postfix)</li>
-                <li>
-                    <label for="">Input With a prefix</label>
-                    <div class="input-with-prefix">
-                        <span class="is-prefix">#</span>
-                        <input type="text" />
-                    </div>
-                </li>
-                <li>
-                    <label for="">Input With a postfix</label>
-                     <div class="input-with-postfix">
-                        <input type="text" />
-                        <span class="is-postfix">.com</span>
-                    </div>
-                </li>
+            <li>
+                <label for="secondRegularRadio">
+                    <input type="radio" value="radio 2" id="secondRegularRadio" name="radios" />
+                    <span>Regular Radio</span>
+                </label>
+            </li>
 
-                <li class="section">Select</li>
-                <li>
-                    <label for="selectList">Select List</label>
-                    <select>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                        <option value="Option 3">Option 3</option>
-                        <option value="Option 4">Option 4</option>
-                    </select>
-                </li>
+            <li class="section">File Upload</li>
+            <li>
+                <label for="file1">File Field</label>
+                <input id="file1" class="file" type="file" />
+            </li>
 
-                <li class="section">Checkboxes</li>
-                <li>
-                    <label for="regularCheckbox">
-                        <input type="checkbox" value="checkbox 1" id="regularCheckbox" />
-                        <span>Regular Checkbox</span>
-                    </label>
-                </li>
+            <li class="section">Textarea</li>
+            <li>
+                <label for="regularTextarea">Regular Textarea</label>
+                <textarea class="regularTextarea"></textarea>
+            </li>
 
-                <li>
-                    <label for="secondRegularCheckbox">
-                        <input type="checkbox" value="checkbox 2" id="secondRegularCheckbox" />
-                        <span>Regular Checkbox</span>
-                    </label>
-                </li>
-
-                <li class="section">Radio Buttons</li>
-                <li>
-                    <label for="regularRadio">
-                        <input type="radio" value="radio 1" id="regularRadio" name="radios" />
-                        <span>Regular Radio</span>
-                    </label>
-                </li>
-
-                <li>
-                    <label for="secondRegularRadio">
-                        <input type="radio" value="radio 2" id="secondRegularRadio" name="radios" />
-                        <span>Regular Radio</span>
-                    </label>
-                </li>
-
-                <li class="section">File Upload</li>
-                <li>
-                    <label for="file1">File Field</label>
-                    <input id="file1" class="file" type="file" />
-                </li>
-
-                <li class="section">Textarea</li>
-                <li>
-                    <label for="regularTextarea">Regular Textarea</label>
-                    <textarea class="regularTextarea"></textarea>
-                </li>
-
-                <li class="section">Form Button</li>
-                <li>
-                    <input type="submit" value="Submit" />
-                    <input type="submit" value="Reset" />
-                    <input type="button" value="Button" />
-                </li>
-            </ul>
-        </form>
-    </div>
+            <li class="section">Form Button</li>
+            <li>
+                <input type="submit" value="Submit" />
+                <input type="submit" value="Reset" />
+                <input type="button" value="Button" />
+            </li>
+        </ul>
+    </form>
 </body>
 </html>

@@ -11,27 +11,20 @@
         padding-right: 0.5em;
         color: @breakcrumbs-textColor;
     }
-    
-    .is-disabled {
-        color: @gray-light;
-        cursor: @breakcrumbs-disable-Color;
-    }
+}
 
-    .is-current {
-        color: @breakcrumbs-current-Color;
-    }
+//===================================
 
-    &.with-divider {
-        li {
-            &:first-child:before {
-                padding-right: 0;
-            }
+.breadcrumbs_divider {
+    li {
+        &:first-child:before {
+            padding-right: 0;
+        }
 
-            &:before {
-                color: @breakcrumbs-dividerColor;
-                // padding-right: 10px;
-                padding-right: 0.6em;
-            }
+        &:before {
+            color: @breakcrumbs-dividerColor;
+            // padding-right: 10px;
+            padding-right: 0.6em;
         }
     }
 }
@@ -41,3 +34,15 @@
     padding-left: 0.5em;
     color: @breakcrumbs-dividerColor;
 }
+
+//====================================
+
+.breadcrumbs_disabled {
+    color: @gray-light;
+    cursor: @breakcrumbs-disable-Color;
+}
+
+.breadcrumbs_current {
+    color: @breakcrumbs-current-Color;
+}
+

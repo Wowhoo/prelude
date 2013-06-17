@@ -8,24 +8,23 @@
         .inline-block();
         list-style: none outside none;
     }
-    
-    // .is-disabled {
+}
+// .breadcrumbs_disabled {
 
     // }
 
-    .is-current {
-        cursor: default;
-    }
+.breadcrumbs_current {
+    cursor: default;
+}
 
-    &.with-divider {
-        li {
-            &:first-child:before {
-                content: " ";
-            }
+.breadcrumbs_divider {
+    li {
+        &:first-child:before {
+            content: " ";
+        }
 
-            &:before {
-                content: "/";
-            }
+        &:before {
+            content: "/";
         }
     }
 }
