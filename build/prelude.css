@@ -664,10 +664,10 @@ label {
 .input-wrap .input_append {
   margin-left: -2px;
 }
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+form button,
+form input[type="submit"],
+form input[type="reset"],
+form input[type="button"] {
   height: 2em;
   padding: 0.3em 0.6em;
   border: 1px solid #b3b3b3;
@@ -676,19 +676,19 @@ input[type="button"] {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover {
+form button:hover,
+form input[type="submit"]:hover,
+form input[type="reset"]:hover,
+form input[type="button"]:hover {
   color: #222222;
   text-decoration: none;
   background: #e5e5e5;
   border: 1px solid #808080;
 }
-button:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-input[type="button"]:active {
+form button:active,
+form input[type="submit"]:active,
+form input[type="reset"]:active,
+form input[type="button"]:active {
   border: 1px solid #6f6f6f;
   background: #cccccc;
 }
@@ -1254,46 +1254,6 @@ textarea:focus {
   display: block;
 }
 
-.tabs {
-  margin: 0;
-  padding: 0;
-  height: 32px;
-  border-bottom: 1px solid #666666;
-  list-style: none outside none;
-  -moz-box-sizing: border-box;
-}
-.tabs li {
-  float: left;
-  border: 1px solid #252525;
-  display: block;
-  color: #333333;
-  font-size: 12px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  text-decoration: none;
-  width: 138px;
-  border-radius: 6px 6px 0 0;
-  background-color: #e0e0e0;
-  cursor: pointer;
-}
-.tabs .tab_active {
-  background-color: #fff;
-  border-bottom-color: transparent;
-}
-.panes {
-  padding: 15px;
-  border-right: 1px solid #252525;
-  border-bottom: 1px solid #252525;
-  border-left: 1px solid #252525;
-  border-radius: 0 0 6px 6px;
-}
-.panes > div {
-  display: none;
-}
-.panes .tab_active {
-  display: block;
-}
 
 .progress {
   height: 20px;
