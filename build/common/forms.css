@@ -80,14 +80,11 @@ label {
   letter-spacing: normal;
 }
 
-.input-prepend,
-.input-append {
+.input-wrap {
   letter-spacing: -4px;
 }
-.input-prepend .is-prepend,
-.input-append .is-prepend,
-.input-prepend .is-append,
-.input-append .is-append {
+.input-wrap .input_prepend,
+.input-wrap .input_append {
   display: inline-block;
   padding: 0.3em 0.6em;
   height: 2em;
@@ -103,19 +100,15 @@ label {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-.ie7 .input-prepend .is-prepend,
-.ie7 .input-append .is-prepend,
-.ie7 .input-prepend .is-append,
-.ie7 .input-append .is-append {
+.ie7 .input-wrap .input_prepend,
+.ie7 .input-wrap .input_append {
   display: inline;
   zoom: 1;
 }
-.input-prepend .is-prepend,
-.input-append .is-prepend {
+.input-wrap .input_prepend {
   margin-right: -2px;
 }
-.input-prepend .is-append,
-.input-append .is-append {
+.input-wrap .input_append {
   margin-left: -2px;
 }
 button,
@@ -185,17 +178,17 @@ label {
   margin-bottom: 5.28px;
   margin-bottom: 0.33rem;
 }
-input.is-error,
-textarea.is-error,
-select.is-error {
+input.input_error,
+textarea.input_error,
+select.input_error {
   border-color: #dc4e44;
 }
-input.is-success,
-textarea.is-success,
-select.is-success {
+input.input_success,
+textarea.input_success,
+select.input_success {
   border-color: #46a546;
 }
-input.is-disabled {
+input.input_disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }

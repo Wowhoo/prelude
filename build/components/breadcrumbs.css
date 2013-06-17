@@ -9,13 +9,13 @@
   display: inline;
   zoom: 1;
 }
-.breadcrumbs .is-current {
+.breadcrumbs_current {
   cursor: default;
 }
-.breadcrumbs.with-divider li:first-child:before {
+.breadcrumbs_divider li:first-child:before {
   content: " ";
 }
-.breadcrumbs.with-divider li:before {
+.breadcrumbs_divider li:before {
   content: "/";
 }
 
@@ -28,21 +28,21 @@
   padding-right: 0.5em;
   color: #595959;
 }
-.breadcrumbs .is-disabled {
-  color: #999999;
-  cursor: #999999;
-}
-.breadcrumbs .is-current {
-  color: #333333;
-}
-.breadcrumbs.with-divider li:first-child:before {
+.breadcrumbs_divider li:first-child:before {
   padding-right: 0;
 }
-.breadcrumbs.with-divider li:before {
+.breadcrumbs_divider li:before {
   color: #a6a6a6;
   padding-right: 0.6em;
 }
 .breadcrumbs-divider {
   padding-left: 0.5em;
   color: #a6a6a6;
+}
+.breadcrumbs_disabled {
+  color: #999999;
+  cursor: #999999;
+}
+.breadcrumbs_current {
+  color: #333333;
 }

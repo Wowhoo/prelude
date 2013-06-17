@@ -32,10 +32,10 @@
 .pagination li a:hover {
   text-decoration: none;
 }
-.pagination .is-current a {
+.pagination_current a {
   cursor: default;
   text-decoration: none;
 }
-.pagination .is-disabled a {
+.pagination_disabled a {
   cursor: default;
 }

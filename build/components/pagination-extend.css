@@ -15,19 +15,19 @@
   color: #999999;
   background-color: #ffffff;
 }
-.pagination .is-current a {
+.pagination_current a {
   background: #049cdb;
   color: #ffffff;
   font-weight: bold;
 }
-.pagination .is-current a:hover {
+.pagination_current a:hover {
   background: #049cdb;
   color: #ffffff;
 }
-.pagination .is-disabled a {
+.pagination_disabled a {
   color: #999999;
 }
-.pagination .is-disabled a:hover {
+.pagination_disabled a:hover {
   color: #999999;
   background-color: transparent;
 }
