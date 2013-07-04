@@ -1,0 +1,55 @@
+@import "init.less";
+// ==========================================================================
+// Forms
+// ==========================================================================
+form {
+	margin: 0;
+
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		.inline-block();
+		letter-spacing: normal;
+		text-decoration: none;
+		text-align: center;
+		.box-sizing(border-box);
+	}
+}
+ 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea,
+select {
+	.inline-block();
+	max-width: 100%;
+	letter-spacing: normal;
+	outline: none;
+	// vertical-align: top;
+	.box-sizing(border-box);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline;
+	letter-spacing: normal;
+	cursor: pointer;
+}
+
+label {
+	display: block;	
+	letter-spacing: normal;
+}

@@ -1,0 +1,269 @@
+#grid {
+	.generator (@core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
+		@namespace: '';
+
+		#grid > .base ();
+		#grid > ._generator (@namespace, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns);
+	}
+
+	.generator (@screenName, @breakpoint, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
+		@namespace: ~`"@{screenName}" + '-'`;	
+
+		@media only screen and (max-width: @breakpoint) {
+			#grid > ._generator (@namespace, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns);
+		}
+	}
+
+	._generator (@namespace, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
+		// define
+		.core (@core) when (@core = true){
+			#grid > .core (@namespace, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix);
+		}
+		.equalization (@equalization) when (@equalization = true){
+			#grid > .equalization (@namespace, @equalizationColumns);
+		}
+		.phrase (@phrase) when (@phrase = true){
+			#grid > .phrase (@namespace, @phraseColumns);
+		}
+
+		// generate
+		.core(@core);
+		.equalization(@equalization);
+		.phrase(@phrase);
+	}
+
+	.base () {
+		.row {
+			overflow: hidden;
+			list-style: none;
+			letter-spacing: -4px; /* Fix inline-block weirdness */
+			font-size: 0;
+
+			.column, [class*="span-"], [class*="column-"] {
+				display: inline-block;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				-o-box-sizing: border-box;
+				box-sizing: border-box;
+				min-height: 1px; /* prevent collapsing columns */
+				vertical-align: top;
+				font-size: @gridFontsize;
+				letter-spacing: 0; /* Restore letter spacing. */
+				*display: inline; /* For IE6/IE7 */
+				*zoom: 1; /* For IE6/IE7 */	
+			}
+			&.center {
+				text-align: center;
+			}
+		}
+	}
+	
+	.core (@namespace, @gutterWidth, @gridColumns, @withPrefix, @withSuffix) {
+		// define
+		.base (@gutterWidth){
+			.row {
+				margin-left: 0 - @gutterWidth;
+			}
+			.column, [class*="span-"], [class*="column-"] {
+				padding-left: @gutterWidth;
+			}
+		}
+		.base (@gutterWidth) when (@namespace = ''){
+			.no-spacing {
+				margin-left: 0;
+				.column, [class*="span-"], [class*="column-"] {
+					padding-left: 0;
+				}
+			}
+		}
+		
+		.spanX (@index) when (@index < @gridColumns + 1) {
+			(~".@{namespace}span-@{index}") {
+				.span (@index);
+			}
+			.span (@columns) {
+				width: (100% / @gridColumns) * @columns;
+			}
+			.spanX (@index + 1);
+		}
+		
+		.withPrefix (@withPrefix) when (@withPrefix = true) {
+			.prefixX (@index) when (@index < @gridColumns) {
+				(~".@{namespace}prefix-@{index}") {
+					.prefix (@index);
+				}
+				.prefixX (@index + 1);
+			}
+			.prefix (@columns) {
+				margin-left: (100% / @gridColumns) * @columns;
+			}
+			.prefixX (1);
+		}
+
+		.withSuffix (@withSuffix) when (@withSuffix = true) {
+			.suffixX (@index) when (@index < @gridColumns) {
+				(~".@{namespace}suffix-@{index}") {
+					.suffix (@index);
+				}
+				.suffixX (@index + 1);
+			}
+			.suffix (@columns) {
+				margin-right: (100% / @gridColumns) * @columns;
+			}
+			.suffixX (1);
+		}
+
+		// generate
+		.base (@gutterWidth);
+		.spanX (1);
+		.withPrefix (@withPrefix);
+		.withSuffix (@withSuffix);
+	}
+
+	.equalization (@namespace, @gridColumns) {
+		// define
+		.columnX (@index) when (@index < @gridColumns + 1) {
+			(~".@{namespace}has-@{index}") {
+				.column {
+					width: 100% / @index
+				}
+			}
+			.columnX (@index + 1);
+		}
+
+		// generate
+		.columnX (1);
+	}
+
+
+	.phrase (@namespace, full) {	
+		.row {
+			(~".@{namespace}full") {
+				width: 100%;
+			}
+		}
+	}
+	.phrase (@namespace, half) {
+		.row {
+			(~".@{namespace}full") {
+				width: 100%;
+			}
+			(~".@{namespace}half") {
+				width: 50%;
+			}
+		}
+	}
+	.phrase (@namespace, third) {
+		.row {
+			(~".@{namespace}full") {
+				width: 100%;
+			}
+			(~".@{namespace}half") {
+				width: 50%;
+			}
+			(~".@{namespace}third") {
+				width: 33.3333%;
+			}
+			(~".@{namespace}two-third") {
+				width: 66.6666%;
+			}
+		}
+	}
+	.phrase (@namespace, fourth) {
+		.row {
+			(~".@{namespace}full") {
+				width: 100%;
+			}
+			(~".@{namespace}half"), (~".@{namespace}two-fourth") {
+				width: 50%;
+			}
+			(~".@{namespace}third") {
+				width: 33.3333%;
+			}
+			(~".@{namespace}two-third") {
+				width: 66.6666%;
+			}
+			(~".@{namespace}fourth") {
+				width: 25%;
+			}
+			(~".@{namespace}three-fourth") {
+				width: 75%;
+			}
+		}
+	}
+	.phrase (@namespace, fifth) {
+		.row {
+			(~".@{namespace}full") {
+				width: 100%;
+			}
+			(~".@{namespace}half"), (~".@{namespace}two-fourth") {
+				width: 50%;
+			}
+			(~".@{namespace}third") {
+				width: 33.3333%;
+			}
+			(~".@{namespace}two-third") {
+				width: 66.6666%;
+			}
+			(~".@{namespace}fourth") {
+				width: 25%;
+			}
+			(~".@{namespace}three-fourth") {
+				width: 75%;
+			}
+			(~".@{namespace}fifth") {
+				width: 20%;
+			}
+			(~".@{namespace}two-fifth") {
+				width: 40%;
+			}
+			(~".@{namespace}three-fifth") {
+				width: 60%;
+			}
+			(~".@{namespace}four-fifth") {
+				width: 80%;
+			}
+		}
+	}
+	.phrase (@namespace, sixth) {
+		.row {
+			(~".@{namespace}full") {
+				width: 100%;
+			}
+			(~".@{namespace}half"), (~".@{namespace}two-fourth"), (~".@{namespace}three-sixth") {
+				width: 50%;
+			}
+			(~".@{namespace}third"), (~".@{namespace}two-sixth") {
+				width: 33.3333%;
+			}
+			(~".@{namespace}two-third") {
+				width: 66.6666%;
+			}
+			(~".@{namespace}fourth") {
+				width: 25%;
+			}
+			(~".@{namespace}three-fourth") {
+				width: 75%;
+			}
+			(~".@{namespace}fifth") {
+				width: 20%;
+			}
+			(~".@{namespace}two-fifth") {
+				width: 40%;
+			}
+			(~".@{namespace}three-fifth") {
+				width: 60%;
+			}
+			(~".@{namespace}four-fifth") {
+				width: 80%;
+			}
+			(~".@{namespace}sixth") {
+				width: 16.6666%;
+			}
+			(~".@{namespace}five-sixth") {
+				width: 83.3333%;
+			}
+		}
+	}
+}

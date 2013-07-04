@@ -1,4 +1,5 @@
 'use strict';
+var path = require('path');
 
 module.exports = function(grunt) {
 
@@ -22,9 +23,10 @@ module.exports = function(grunt) {
       'label|core,extend'
     ],
     functions: [
-      'grid'
+      'grid|core,equalization,phrase'
     ]
   };
+
   var less_build_files = [];
   var concat_all_files = [];
   var concat_all_min_files = [];
@@ -60,17 +62,79 @@ module.exports = function(grunt) {
       }
     });
   }
+  
+  var less_skin_build_files = [];
+
+  var skins = {
+    pure: {
+      common: [
+        'forms|core,extend',
+        'typography'
+      ],
+      components: [
+        'alert',
+        'tables|core,extend'
+      ]
+    }
+  };
+
+  for(var skin in skins){
+    for(var type in skins[skin]){
+      skins[skin][type].forEach(function(file){
+        if(file.indexOf('|') !== -1){
+          var file_array = file.split('|');
+          var subfiles = file_array[1].split(',');
+          var folder = file_array[0];
+          var concat_srcs = [];
+          subfiles.forEach(function(subfile){
+            less_skin_build_files.push({
+              src: 'skins/'+skin+'/'+type+'/'+folder+'/'+folder+'-'+subfile+'.less',
+              dest: 'build/skins/'+skin+'/'+type+'/'+folder+'-'+subfile+'.css'
+            });
+            concat_srcs.push('build/skins/'+skin+'/'+type+'/'+folder+'-'+subfile+'.css');
+          });
+        }else{
+          less_skin_build_files.push({
+            src: 'skins/'+skin+'/'+type+'/'+file+'/'+file+'.less',
+            dest: 'build/skins/'+skin+'/'+type+'/'+file+'.css'
+          });
+        }
+      });
+    }
+  }
+
+
     
   // Project configuration.
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
 
+    // -- copy config ----------------------------------------------------------
+    copy: {
+        adaptGrid: {
+            files: [{
+                    expand: true,
+                    flatten: true,
+                    cwd: 'components/',
+                    src: [
+                        'adaptGrid/src/mixins.less',
+                    ],
+                    dest: 'less/functions/grid/',
+                    rename: function (dest, src) {
+                      src = 'grid-mixins.less';
+                      return path.join(dest, src);
+                  }
+                }
+            ]
+        },
+    },
     // -- Clean Config ---------------------------------------------------------
 
     clean: {
         build    : ['build/'],
-        release  : ['release/']
+        release  : ['release/'],
+        skin_build : ['build/skins/']
     },
 
     // -- Less Config ----------------------------------------------------------
@@ -78,6 +142,9 @@ module.exports = function(grunt) {
     less: {
       build: {
         files: less_build_files
+      },
+      skin_build: {
+        files: less_skin_build_files
       }
     },
 
@@ -96,7 +163,18 @@ module.exports = function(grunt) {
               dest: 'build/<%= pkg.name %>-min.css',
               src: concat_all_min_files
             }]
-        }
+        },
+
+        // skin_build: {
+        //   files: concat_skin_build_files
+        // },
+
+        // skin_all: [{
+        //   files: concat_skin_all_files
+        // },{
+        //   files: concat_skin_all_min_files
+        // }]
+
     },
 
     // -- CSSLint Config -------------------------------------------------------
@@ -187,6 +265,7 @@ module.exports = function(grunt) {
             }
         }
     }
+
   });
 
   // -- Main Tasks ---------------------------------------------------------------
@@ -197,6 +276,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-recess');
 
   grunt.registerTask('default', [
@@ -206,6 +286,11 @@ module.exports = function(grunt) {
       'cssmin',
       'concat:all',
       'license'
+  ]);
+
+  grunt.registerTask('skin', [
+    'clean:skin_build',
+    'less:skin_build'
   ]);
 
   grunt.registerTask('test', [
@@ -222,6 +307,8 @@ module.exports = function(grunt) {
       'clean:release',
       'compress:release'
   ]);
+
+
 
   // -- Suppress Task ------------------------------------------------------------
 

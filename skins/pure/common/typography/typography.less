@@ -1,0 +1,226 @@
+@import "init.less";
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+// Body reset
+// ==========================================================================
+html {
+  font-size: 100%
+}
+body {
+  font-family: @base-fontFamily;
+  .font-size(@base-fontSize);
+  line-height: @base-lineHeight;
+  color: @textColor;
+}
+
+// Paragraph
+// ==========================================================================
+p {
+  .px-to-rem('margin-top', @base-fontSize);
+  .px-to-rem('margin-bottom', @base-fontSize);
+}
+
+// Links
+// ==========================================================================
+
+a {
+  color: @linkColor;
+  text-decoration: none;
+}
+a:hover {
+  color: @hover-linkColor;
+  text-decoration: underline;
+}
+
+//remove focus&acitve dashed in ff
+a {
+  outline: none;
+  &:focus {
+      outline: none;
+  }
+  &:active {
+      outline: none;
+  }
+}
+
+// Emphasis & misc
+// ==========================================================================
+
+small {
+  .font-size(@base-fontSize*0.85);
+}
+strong, b {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+cite {
+  font-style: normal;
+}
+code {
+  .font-size(@base-fontSize*0.9);
+  background: @code-bgColor;
+  border: 1px solid @gray-light;
+  padding: 2px 3px;
+}
+
+kbd {
+    background: @code-bgColor;
+    border: 1px solid @gray-light;
+    .border-radius(@base-borderRadius);
+    font-weight: normal;
+    padding: 0 0.5em;
+    white-space: nowrap;
+}
+del {
+    text-decoration: line-through;
+}
+ins {
+    text-decoration: underline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+mark {
+    background-color: @mark-bgColor;
+}
+
+// Headings
+// ==========================================================================
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+  text-rendering: optimizelegibility; 
+  small {
+    font-weight: normal;
+    line-height: 1;
+  }
+}
+
+h1 {
+  .font-size(@h1-fontSize);
+  margin-bottom: .2em;
+}
+h2 { 
+  .font-size(@h2-fontSize);
+  margin-bottom: .33em;
+}
+h3 { 
+  .font-size(@h3-fontSize);
+  margin-bottom: .5em;
+}
+h4 { 
+  .font-size(@h4-fontSize);
+  margin-bottom: .5em;
+}
+h5 { 
+  .font-size(@h5-fontSize);
+  margin-bottom: .5em;
+}
+h6 { 
+  .font-size(@h6-fontSize);
+  margin-bottom: .5em;
+}
+
+// Lists
+// ==========================================================================
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0;
+  // margin-left: 2rem;
+  .px-to-rem('margin-left', @base-fontSize * 2 );
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+ol ol li {
+    list-style-type: lower-alpha;
+}
+
+ol ol ol li {
+    list-style-type: lower-roman;
+}
+
+// Description Lists
+dl {
+  // margin-bottom: 1.5rem;
+  .px-to-rem('margin-bottom', @base-fontSize * 1.5 );
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 1rem;
+  .px-to-rem('margin-left', @base-fontSize);
+}
+
+// Horizontal rules
+// ==========================================================================
+
+hr {
+  // margin: 1rem 0;
+  .px-to-rem('margin-top', @base-fontSize);
+  .px-to-rem('margin-bottom', @base-fontSize);
+  border: 0;
+  border-top: 1px solid @gray-lighter;
+  border-bottom: 1px solid @white;
+}
+
+// Abbreviations and acronyms
+// ==========================================================================
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted @gray-light;
+}
+
+// Blockquotes
+// ==========================================================================
+
+blockquote {
+  padding: 0 0 0 1em;
+  // margin: 0 0 1.5rem;
+  .px-to-rem('margin-bottom', @base-fontSize * 1.5);
+  p {
+    margin-bottom: 0;
+    #font > .shorthand(16px,300,@base-lineHeight * 1.25);
+  }
+  small {
+    display: block;
+    color: @gray-light;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+// Quotes
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+// Addresses
+address {
+  display: block;
+  // margin-bottom: 1.5rem;
+  .px-to-rem('margin-bottom', @base-fontSize * 1.5);
+  font-style: normal;
+}
+
