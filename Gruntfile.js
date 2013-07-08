@@ -31,6 +31,10 @@ module.exports = function(grunt) {
   var concat_all_files = [];
   var concat_all_min_files = [];
   var concat_build_files = [];
+
+  var concat_all_files_core = [];
+  var concat_all_min_files_core = [];
+
   for(var type in prelude){
     prelude[type].forEach(function(file){
       if(file.indexOf('|') !== -1){
@@ -46,6 +50,10 @@ module.exports = function(grunt) {
           concat_srcs.push('build/'+type+'/'+folder+'-'+subfile+'.css');
           concat_all_files.push('build/'+type+'/'+folder+'-'+subfile+'.css');
           concat_all_min_files.push('build/'+type+'/'+folder+'-'+subfile+'-min.css');
+          if(subfile === 'core') {
+            concat_all_files_core.push('build/'+type+'/'+folder+'-'+subfile+'.css');
+            concat_all_min_files_core.push('build/'+type+'/'+folder+'-'+subfile+'-min.css');
+          }
         });
         concat_build_files.push({
           src: concat_srcs,
@@ -59,6 +67,9 @@ module.exports = function(grunt) {
 
         concat_all_files.push('build/'+type+'/'+file+'.css');
         concat_all_min_files.push('build/'+type+'/'+file+'-min.css');
+
+        concat_all_files_core.push('build/'+type+'/'+file+'.css');
+        concat_all_min_files_core.push('build/'+type+'/'+file+'-min.css');
       }
     });
   }
@@ -162,6 +173,16 @@ module.exports = function(grunt) {
             },{
               dest: 'build/<%= pkg.name %>-min.css',
               src: concat_all_min_files
+            }]
+        },
+
+        allcore: {
+            files: [{
+              dest: 'build/<%= pkg.name %>-core.css',
+              src: concat_all_files_core
+            },{
+              dest: 'build/<%= pkg.name %>-core-min.css',
+              src: concat_all_min_files_core
             }]
         },
 
@@ -285,6 +306,7 @@ module.exports = function(grunt) {
       'concat:build',
       'cssmin',
       'concat:all',
+      'concat:allcore',
       'license'
   ]);
 
