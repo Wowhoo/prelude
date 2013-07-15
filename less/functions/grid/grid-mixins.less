@@ -1,23 +1,24 @@
 #grid {
-	.generator (@core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
-		@namespace: '';
+	.generator (@gutterWidth, @base, @baseColumns, @baseWithPrefix, @baseWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
+		@namespace: ;
 
-		#grid > .base ();
-		#grid > ._generator (@namespace, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns);
+		#grid > .core (@gutterWidth);
+		#grid > ._generator (@namespace, @base, @baseColumns, @baseWithPrefix, @baseWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns);
 	}
 
-	.generator (@screenName, @breakpoint, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
-		@namespace: ~`"@{screenName}" + '-'`;	
+	.generator (@screenName, @breakpoint, @gutterWidth, @base, @baseColumns, @baseWithPrefix, @baseWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
+		@namespace: ~`"@{screenName}" + '-'`;
 
 		@media only screen and (max-width: @breakpoint) {
-			#grid > ._generator (@namespace, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns);
+			#grid > .core > .gutterWidth (@gutterWidth);
+			#grid > ._generator (@namespace, @base,  @baseColumns, @baseWithPrefix, @baseWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns);
 		}
 	}
 
-	._generator (@namespace, @core, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
+	._generator (@namespace, @base, @baseColumns, @baseWithPrefix, @baseWithSuffix, @equalization, @equalizationColumns, @phrase, @phraseColumns) {
 		// define
-		.core (@core) when (@core = true){
-			#grid > .core (@namespace, @coreGutterWidth, @coreColumns, @coreWithPrefix, @coreWithSuffix);
+		.base (@base) when (@base = true){
+			#grid > .base (@namespace, @baseColumns, @baseWithPrefix, @baseWithSuffix);
 		}
 		.equalization (@equalization) when (@equalization = true){
 			#grid > .equalization (@namespace, @equalizationColumns);
@@ -27,59 +28,67 @@
 		}
 
 		// generate
-		.core(@core);
+		.base(@base);
 		.equalization(@equalization);
 		.phrase(@phrase);
 	}
 
-	.base () {
+	.core (@gutterWidth) {
 		.row {
 			overflow: hidden;
 			list-style: none;
 			letter-spacing: -4px; /* Fix inline-block weirdness */
 			font-size: 0;
 
-			.column, [class*="span-"], [class*="column-"] {
-				display: inline-block;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				-ms-box-sizing: border-box;
-				-o-box-sizing: border-box;
-				box-sizing: border-box;
-				min-height: 1px; /* prevent collapsing columns */
-				vertical-align: top;
-				font-size: @gridFontsize;
-				letter-spacing: 0; /* Restore letter spacing. */
-				*display: inline; /* For IE6/IE7 */
-				*zoom: 1; /* For IE6/IE7 */	
-			}
-			&.center {
-				text-align: center;
-			}
-		}
-	}
-	
-	.core (@namespace, @gutterWidth, @gridColumns, @withPrefix, @withSuffix) {
-		// define
-		.base (@gutterWidth){
-			.row {
-				margin-left: 0 - @gutterWidth;
-			}
-			.column, [class*="span-"], [class*="column-"] {
-				padding-left: @gutterWidth;
-			}
-		}
-		.base (@gutterWidth) when (@namespace = ''){
-			.no-spacing {
+			&.no-spacing {
 				margin-left: 0;
 				.column, [class*="span-"], [class*="column-"] {
 					padding-left: 0;
 				}
 			}
+
+			&.center {
+				text-align: center;
+			}
 		}
-		
+
+		.column, [class*="span-"], [class*="column-"] {
+			display: inline-block;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			-o-box-sizing: border-box;
+			box-sizing: border-box;
+			min-height: 1px; /* prevent collapsing columns */
+			vertical-align: top;
+			
+			font-size: @grid-fontsize;
+			letter-spacing: 0; /* Restore letter spacing. */
+			*display: inline; /* For IE6/IE7 */
+			*zoom: 1; /* For IE6/IE7 */	
+		}
+
+		.gutterWidth(@gutterWidth){
+			.row {
+				margin-left: 0 - @gutterWidth;
+			}
+
+			.column, [class*="span-"], [class*="column-"] {
+				padding-left: @gutterWidth;
+			}
+		}
+
+		.gutterWidth(@gutterWidth);
+	}
+
+	.base (@gridColumns, @withPrefix, @withSuffix) {
+		@namespace: ;
+		#grid > .base (@namespace, @gridColumns, @withPrefix, @withSuffix);
+	}
+	
+	.base (@namespace, @gridColumns, @withPrefix, @withSuffix) {
 		.spanX (@index) when (@index < @gridColumns + 1) {
-			(~".@{namespace}span-@{index}") {
+			.@{namespace}span-@{index} {
 				.span (@index);
 			}
 			.span (@columns) {
@@ -90,7 +99,7 @@
 		
 		.withPrefix (@withPrefix) when (@withPrefix = true) {
 			.prefixX (@index) when (@index < @gridColumns) {
-				(~".@{namespace}prefix-@{index}") {
+				.@{namespace}prefix-@{index} {
 					.prefix (@index);
 				}
 				.prefixX (@index + 1);
@@ -103,7 +112,7 @@
 
 		.withSuffix (@withSuffix) when (@withSuffix = true) {
 			.suffixX (@index) when (@index < @gridColumns) {
-				(~".@{namespace}suffix-@{index}") {
+				.@{namespace}suffix-@{index} {
 					.suffix (@index);
 				}
 				.suffixX (@index + 1);
@@ -114,19 +123,20 @@
 			.suffixX (1);
 		}
 
-		// generate
-		.base (@gutterWidth);
 		.spanX (1);
 		.withPrefix (@withPrefix);
 		.withSuffix (@withSuffix);
 	}
-
+	.equalization (@gridColumns) {
+		@namespace: ;
+		#grid > .equalization (@namespace, @gridColumns);
+	}
 	.equalization (@namespace, @gridColumns) {
 		// define
 		.columnX (@index) when (@index < @gridColumns + 1) {
-			(~".@{namespace}has-@{index}") {
+			.@{namespace}has-@{index} {
 				.column {
-					width: 100% / @index
+					width: 100% / @index;
 				}
 			}
 			.columnX (@index + 1);
@@ -136,132 +146,135 @@
 		.columnX (1);
 	}
 
-
+	.phrase (@columns) {
+		@namespace: ;
+		#grid > .phrase (@namespace, @columns);
+	}
 	.phrase (@namespace, full) {	
 		.row {
-			(~".@{namespace}full") {
+			.@{namespace}full {
 				width: 100%;
 			}
 		}
 	}
 	.phrase (@namespace, half) {
 		.row {
-			(~".@{namespace}full") {
+			.@{namespace}full {
 				width: 100%;
 			}
-			(~".@{namespace}half") {
+			.@{namespace}half {
 				width: 50%;
 			}
 		}
 	}
 	.phrase (@namespace, third) {
 		.row {
-			(~".@{namespace}full") {
+			.@{namespace}full {
 				width: 100%;
 			}
-			(~".@{namespace}half") {
+			.@{namespace}half {
 				width: 50%;
 			}
-			(~".@{namespace}third") {
+			.@{namespace}third {
 				width: 33.3333%;
 			}
-			(~".@{namespace}two-third") {
+			.@{namespace}two-third {
 				width: 66.6666%;
 			}
 		}
 	}
 	.phrase (@namespace, fourth) {
 		.row {
-			(~".@{namespace}full") {
+			.@{namespace}full {
 				width: 100%;
 			}
-			(~".@{namespace}half"), (~".@{namespace}two-fourth") {
+			.@{namespace}half, .@{namespace}two-fourth {
 				width: 50%;
 			}
-			(~".@{namespace}third") {
+			.@{namespace}third {
 				width: 33.3333%;
 			}
-			(~".@{namespace}two-third") {
+			.@{namespace}two-third {
 				width: 66.6666%;
 			}
-			(~".@{namespace}fourth") {
+			.@{namespace}fourth {
 				width: 25%;
 			}
-			(~".@{namespace}three-fourth") {
+			.@{namespace}three-fourth {
 				width: 75%;
 			}
 		}
 	}
 	.phrase (@namespace, fifth) {
 		.row {
-			(~".@{namespace}full") {
+			.@{namespace}full {
 				width: 100%;
 			}
-			(~".@{namespace}half"), (~".@{namespace}two-fourth") {
+			.@{namespace}half, .@{namespace}two-fourth {
 				width: 50%;
 			}
-			(~".@{namespace}third") {
+			.@{namespace}third {
 				width: 33.3333%;
 			}
-			(~".@{namespace}two-third") {
+			.@{namespace}two-third {
 				width: 66.6666%;
 			}
-			(~".@{namespace}fourth") {
+			.@{namespace}fourth {
 				width: 25%;
 			}
-			(~".@{namespace}three-fourth") {
+			.@{namespace}three-fourth {
 				width: 75%;
 			}
-			(~".@{namespace}fifth") {
+			.@{namespace}fifth {
 				width: 20%;
 			}
-			(~".@{namespace}two-fifth") {
+			.@{namespace}two-fifth {
 				width: 40%;
 			}
-			(~".@{namespace}three-fifth") {
+			.@{namespace}three-fifth {
 				width: 60%;
 			}
-			(~".@{namespace}four-fifth") {
+			.@{namespace}four-fifth {
 				width: 80%;
 			}
 		}
 	}
 	.phrase (@namespace, sixth) {
 		.row {
-			(~".@{namespace}full") {
+			.@{namespace}full {
 				width: 100%;
 			}
-			(~".@{namespace}half"), (~".@{namespace}two-fourth"), (~".@{namespace}three-sixth") {
+			.@{namespace}half, .@{namespace}two-fourth, .@{namespace}three-sixth {
 				width: 50%;
 			}
-			(~".@{namespace}third"), (~".@{namespace}two-sixth") {
+			.@{namespace}third, .@{namespace}two-sixth {
 				width: 33.3333%;
 			}
-			(~".@{namespace}two-third") {
+			.@{namespace}two-third {
 				width: 66.6666%;
 			}
-			(~".@{namespace}fourth") {
+			.@{namespace}fourth {
 				width: 25%;
 			}
-			(~".@{namespace}three-fourth") {
+			.@{namespace}three-fourth {
 				width: 75%;
 			}
-			(~".@{namespace}fifth") {
+			.@{namespace}fifth {
 				width: 20%;
 			}
-			(~".@{namespace}two-fifth") {
+			.@{namespace}two-fifth {
 				width: 40%;
 			}
-			(~".@{namespace}three-fifth") {
+			.@{namespace}three-fifth {
 				width: 60%;
 			}
-			(~".@{namespace}four-fifth") {
+			.@{namespace}four-fifth {
 				width: 80%;
 			}
-			(~".@{namespace}sixth") {
+			.@{namespace}sixth {
 				width: 16.6666%;
 			}
-			(~".@{namespace}five-sixth") {
+			.@{namespace}five-sixth {
 				width: 83.3333%;
 			}
 		}

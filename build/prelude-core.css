@@ -1,4 +1,4 @@
-/*! Prelude - v0.1.0 - 2013-07-12
+/*! Prelude - v0.1.0 - 2013-07-15
 * https://github.com/amazingSurge/prelude
 * Copyright (c) 2013 amazingSurge; Licensed GPL */
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -57,6 +57,8 @@ html {
   /* 1 */
 
   -ms-text-size-adjust: 100%;
+  /* 2 */
+
   -webkit-text-size-adjust: 100%;
   /* 2 */
 
@@ -870,3 +872,73 @@ label {
   white-space: nowrap;
 }
 
+.row {
+  overflow: hidden;
+  list-style: none;
+  letter-spacing: -4px;
+  /* Fix inline-block weirdness */
+
+  font-size: 0;
+}
+.row.no-spacing {
+  margin-left: 0;
+}
+.row.no-spacing .column,
+.row.no-spacing [class*="span-"],
+.row.no-spacing [class*="column-"] {
+  padding-left: 0;
+}
+.row.center {
+  text-align: center;
+}
+.column,
+[class*="span-"],
+[class*="column-"] {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 1px;
+  /* prevent collapsing columns */
+
+  vertical-align: top;
+  font-size: 16;
+  letter-spacing: 0;
+  /* Restore letter spacing. */
+
+  *display: inline;
+  /* For IE6/IE7 */
+
+  *zoom: 1;
+  /* For IE6/IE7 */
+}
+.row {
+  margin-left: -20px;
+}
+.column,
+[class*="span-"],
+[class*="column-"] {
+  padding-left: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .row {
+    margin-left: -16px;
+  }
+  .column,
+  [class*="span-"],
+  [class*="column-"] {
+    padding-left: 16px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .row {
+    margin-left: -10px;
+  }
+  .column,
+  [class*="span-"],
+  [class*="column-"] {
+    padding-left: 10px;
+  }
+}

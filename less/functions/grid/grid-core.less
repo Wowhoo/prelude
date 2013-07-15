@@ -1,1 +1,11 @@
 @import "init.less";
+
+#grid > .core (@grid-gutterWidth);
+
+@media only screen and (max-width: @grid-tablet-breakpoint) {
+	#grid > .core > .gutterWidth (@grid-tablet-gutterWidth);
+}
+
+@media only screen and (max-width: @grid-mobile-breakpoint) {
+	#grid > .core > .gutterWidth (@grid-mobile-gutterWidth);
+}

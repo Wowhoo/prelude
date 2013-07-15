@@ -1,1 +1,11 @@
 @import "init.less";
+
+#grid > .equalization (@grid-equalization-columns);
+
+@media only screen and (max-width: @grid-tablet-breakpoint) {
+	#grid > .equalization (tablet-, @grid-tablet-equalization-columns);
+}
+
+@media only screen and (max-width: @grid-mobile-breakpoint) {
+	#grid > .equalization (mobile-, @grid-mobile-equalization-columns);
+}

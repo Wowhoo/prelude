@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       'label|core,extend'
     ],
     functions: [
-      'grid|core,equalization,phrase'
+      'grid|core,base,equalization,phrase'
     ]
   };
 
