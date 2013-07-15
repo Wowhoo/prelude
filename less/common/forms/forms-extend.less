@@ -3,12 +3,11 @@
 // Forms
 // ==========================================================================
 
-.input-prepend,
-.input-append {
+.input-wrap {
 	letter-spacing: -4px;
 
-	.is-prepend,
-	.is-append {
+	.input_prepend,
+	.input_append {
 		.inline-block();
 		// padding: 4px 10px;
 		// margin-bottom: 0 0 10px;
@@ -25,38 +24,41 @@
 		.box-sizing(border-box);
 	}
 
-	.is-prepend {
+	.input_prepend {
 		margin-right: -2px;
 	}
-	.is-append {
+	.input_append {
 		margin-left: -2px;
 	}
 }
 
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-	// height: 30px;
-	// padding: 4px 10px;
-	height: 2em;
-	padding: 0.3em 0.6em;
-	border: 1px solid @formButton-borderColor;
-	background: @formButton-bgColor;
-	.border-radius(@form-borderRadius);
+form {
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		// height: 30px;
+		// padding: 4px 10px;
+		height: 2em;
+		padding: 0.3em 0.6em;
+		border: 1px solid @formButton-borderColor;
+		background: @formButton-bgColor;
+		.border-radius(@form-borderRadius);
 
-	&:hover {
-		color: @formButton-hover-textColor;
-		text-decoration: none;
-		background: @formButton-hover-bgColor;
-		border: 1px solid @formButton-hover-borderColor;
-	}
+		&:hover {
+			color: @formButton-hover-textColor;
+			text-decoration: none;
+			background: @formButton-hover-bgColor;
+			border: 1px solid @formButton-hover-borderColor;
+		}
 
-	&:active {
-		border: 1px solid @formButton-active-borderColor;
-		background: @formButton-active-bgColor;
+		&:active {
+			border: 1px solid @formButton-active-borderColor;
+			background: @formButton-active-bgColor;
+		}
 	}
 }
+
  
 input[type="text"],
 input[type="password"],
@@ -106,19 +108,19 @@ label {
 	.px-to-rem('margin-bottom', @base-fontSize * 0.33);
 }
 
-input.is-error,
-textarea.is-error,
-select.is-error {
+input.input_error,
+textarea.input_error,
+select.input_error {
 	border-color: @input-error-borderColor;
 }
 
-input.is-success,
-textarea.is-success,
-select.is-success {
+input.input_success,
+textarea.input_success,
+select.input_success {
 	border-color: @input-success-borderColor;
 }
 
-input.is-disabled {
+input.input_disabled {
 	background-color: @input-disable-bgColor;
 	cursor: not-allowed;
 }

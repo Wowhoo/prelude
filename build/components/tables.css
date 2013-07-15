@@ -36,46 +36,46 @@
 .table tbody + tbody {
   border-top: 2px solid #dddddd;
 }
-.table.is-simple td,
-.table.is-simple th {
+.table_simple td,
+.table_simple th {
   border: 0 none;
 }
-.table.is-striped tbody tr:nth-child(odd) td,
-.table.is-striped tbody tr:nth-child(odd) th {
+.table_striped tbody tr:nth-child(odd) td,
+.table_striped tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
-.table.is-bordered {
+.table_bordered {
   border: 1px solid #dddddd;
   border-collapse: separate;
   border-left: 0;
 }
-.table.is-bordered th,
-.table.is-bordered td {
+.table_bordered th,
+.table_bordered td {
   border-left: 1px solid #dddddd;
 }
-.table.is-bordered caption + thead tr:first-child th,
-.table.is-bordered caption + tbody tr:first-child th,
-.table.is-bordered caption + tbody tr:first-child td,
-.table.is-bordered colgroup + thead tr:first-child th,
-.table.is-bordered colgroup + tbody tr:first-child th,
-.table.is-bordered colgroup + tbody tr:first-child td,
-.table.is-bordered thead:first-child tr:first-child th,
-.table.is-bordered tbody:first-child tr:first-child th,
-.table.is-bordered tbody:first-child tr:first-child td {
+.table_bordered caption + thead tr:first-child th,
+.table_bordered caption + tbody tr:first-child th,
+.table_bordered caption + tbody tr:first-child td,
+.table_bordered colgroup + thead tr:first-child th,
+.table_bordered colgroup + tbody tr:first-child th,
+.table_bordered colgroup + tbody tr:first-child td,
+.table_bordered thead:first-child tr:first-child th,
+.table_bordered tbody:first-child tr:first-child th,
+.table_bordered tbody:first-child tr:first-child td {
   border-top: 0;
 }
-.table.is-hover tbody tr:hover td,
-.table.is-hover tbody tr:hover th {
+.table_hover tbody tr:hover td,
+.table_hover tbody tr:hover th {
   background-color: #f5f5f5;
 }
-.table.is-condensed th,
-.table.is-condensed td {
+.table_condensed th,
+.table_condensed td {
   padding: 0.3em 0.4em;
 }
-.table.is-sortable {
+.table_sortable {
   border: 1px solid #dddddd;
 }
-.table.is-sortable thead th {
+.table_sortable thead th {
   border-right: 1px solid #dddddd;
   cursor: pointer;
   left: 0;

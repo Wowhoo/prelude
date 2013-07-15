@@ -9,12 +9,12 @@
   display: inline;
   zoom: 1;
 }
-.breadcrumbs .is-current {
+.breadcrumbs_current {
   cursor: default;
 }
-.breadcrumbs.with-divider li:first-child:before {
+.breadcrumbs_divider li:first-child:before {
   content: " ";
 }
-.breadcrumbs.with-divider li:before {
+.breadcrumbs_divider li:before {
   content: "/";
 }

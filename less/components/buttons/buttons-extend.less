@@ -28,7 +28,7 @@
     }
 
     // Active state
-    &.is-active,
+    &.button_active,
     &:active {
         background-color: @button-active-bgColor;
         background-image: none;
@@ -37,7 +37,7 @@
     }
 
     // Disabled state
-    &.is-disabled,
+    &.button_disabled,
     &[disabled] {
         cursor: default;
         background-color: @button-disable-bgColor;
@@ -47,34 +47,34 @@
     }
 
     // button size
-    // &.is-mini {
+    // &.button_mini {
     //     padding: @padding-mini;
     //     font-size: @fontSize-mini;
     // }
-    // &.is-small {
+    // &.button_small {
     //     padding: @padding-small;
     //     font-size: @fontSize-small;
     // }
-    // &.is-large {
+    // &.button_large {
     //     padding: @padding-large;
     //     font-size: @fontSize-large;
     // }
 
     //button types
-    &.is-radius {
+    &.button_radius {
         .border-radius(@button-borderRadius);
     }
-    &.is-round {
+    &.button_round {
         .border-radius(1000px 1000px 1000px 1000px);
     }
-    &.is-full {
+    &.button_full {
         width: 100%;
     }
 
 }
 
 //Button groups
-.button-group {
+.button_group {
     .inline-block();
     // margin-right: 2px;
     .px-to-rem('margin-right', @base-fontSize * 0.33);

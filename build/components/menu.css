@@ -9,7 +9,7 @@
   display: none;
   list-style: none;
 }
-.menu .menu_sub:hover > ul {
+.menu .menu-sub:hover > ul {
   display: block;
 }
 
@@ -18,7 +18,7 @@
   color: black;
   background-color: #cbcbcb;
 }
-.menu .menu_sub > a {
+.menu .menu-sub > a {
   color: #fff;
   background-color: #999;
 }
@@ -26,7 +26,7 @@
   color: #fff;
   background-color: lightblue;
 }
-.menu .menu_sub:hover > a {
+.menu .menu-sub:hover > a {
   color: #333;
   background-color: #ebebeb;
 }
@@ -43,17 +43,17 @@
   padding: 0;
   margin: 0;
 }
-.menu_horizontal .menu_sub {
+.menu_horizontal .menu-sub {
   position: relative;
 }
-.menu_horizontal .menu_sub ul {
+.menu_horizontal .menu-sub ul {
   position: absolute;
   top: 100%;
   left: 0;
   padding: 0;
   margin: 0;
 }
-.menu_horizontal .menu_sub .menu_sub ul {
+.menu_horizontal .menu-sub .menu-sub ul {
   top: 0;
   left: 100%;
 }
