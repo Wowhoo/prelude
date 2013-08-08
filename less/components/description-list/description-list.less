@@ -1,0 +1,19 @@
+@import "init.less";
+// ==========================================================================
+// Description-list
+// ==========================================================================
+.description-list-line {
+	> dt {
+		font-weight: normal;
+		&:nth-child(n+2) {
+		  margin-top: 5px;
+		  padding-top: 5px;
+		  border-top: 1px solid @gray-lighter;
+		}
+	}
+
+	> dd {
+	  color: @gray-lighter;
+	}
+  
+}

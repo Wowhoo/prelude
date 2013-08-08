@@ -1,0 +1,54 @@
+@import "semantic.less";
+
+#grid {
+	.basic (@namespace, @grid-columns, @with-prefix, @with-suffix, @with-noGutter, @has-gutter: true) {
+		// define
+		.spanX (@index) when (@index < @grid-columns + 1) {
+			.@{namespace}span-@{index} {
+				.span (@index);
+			}
+			.span (@columns) {
+				#grid.column-width ((100% / @grid-columns) * @columns, @has-gutter);
+			}
+			.spanX (@index + 1);
+		}
+		
+		.withPrefix (@with-prefix) when (@with-prefix = true) {
+			.prefixX (@index) when (@index < @grid-columns) {
+				.@{namespace}prefix-@{index} {
+					.prefix (@index);
+				}
+				.prefixX (@index + 1);
+			}
+			.prefix (@columns) {
+				#grid.prefix-width ((100% / @grid-columns) * @columns, @has-gutter);
+			}
+			.prefixX (0);
+		}
+
+		.withSuffix (@with-suffix) when (@with-suffix = true) {
+			.suffixX (@index) when (@index < @grid-columns) {
+				.@{namespace}suffix-@{index} {
+					.suffix (@index);
+				}
+				.suffixX (@index + 1);
+			}
+			.suffix (@columns) {
+				#grid.suffix-width ((100% / @grid-columns) * @columns, @has-gutter);
+			}
+			.suffixX (0);
+		}
+
+		.withNoGutter (@with-noGutter) when (@with-noGutter = true){
+			.no-gutter {
+				#grid.basic (@namespace, @grid-columns, @with-prefix, @with-suffix, false, false);
+			}
+		}
+
+		// generate
+		.spanX (1);
+		.withPrefix (@with-prefix);
+		.withSuffix (@with-suffix);
+		.withNoGutter (@with-noGutter);
+	}
+}

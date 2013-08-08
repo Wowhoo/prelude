@@ -1,0 +1,147 @@
+@import "../generator/variables.less";
+
+#grid {
+	// row
+	.row (@has-gutter: @gird-semantic-hasGutter, @gutter-width: @grid-semantic-gutterWidth) {
+		font-size: 0;
+		list-style: none;
+
+		// safari 5 dont support font-size: 0, and android device don't work properly
+		@webkit-hack: ~"::made-up-pseudo-element,";
+		@{webkit-hack} & {
+			@media screen and (-webkit-min-device-pixel-ratio:0) {
+				font-size: inherit;
+				letter-spacing: -.31em; // for safari 5
+				word-spacing: -.41em; // for android
+			}
+		}
+	}
+	.row (@has-gutter: @gird-semantic-hasGutter, @gutter-width: @grid-semantic-gutterWidth) when (@has-gutter = true){
+		@half-gutter-width: @gutter-width/2;
+
+		margin-left: -@grid-ie8-gutterWidth/2;
+		margin-left: ~"-webkit-calc(-@{half-gutter-width})";
+		margin-left:         ~"calc(-@{half-gutter-width})";
+
+		margin-right: -@grid-ie8-gutterWidth/2;
+		margin-right: ~"-webkit-calc(-@{half-gutter-width})";
+		margin-right:         ~"calc(-@{half-gutter-width})";
+	}
+
+	// column
+	.column (@has-gutter: @gird-semantic-hasGutter, @gutter-width: @grid-semantic-gutterWidth, @font-size: @grid-semantic-fontSize) {
+		display: inline-block;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		min-height: 1px; // prevent collapsing columns
+		vertical-align: top;
+		#grid.font-size (@font-size);
+		*display: inline; // For IE6/IE7
+		*zoom: 1; // For IE6/IE7
+
+		// safari 5 dont support font-size: 0, and android device don't work properly
+		@webkit-hack: ~"::made-up-pseudo-element,";
+		@{webkit-hack} & {
+			@media screen and (-webkit-min-device-pixel-ratio:0) { 
+				letter-spacing: normal;
+				word-spacing: normal;
+			}
+		}
+	}
+
+	.column (@has-gutter: @gird-semantic-hasGutter, @gutter-width: @grid-semantic-gutterWidth, @font-size: @grid-semantic-fontSize) when (@has-gutter = true){
+		@half-gutter-width: @gutter-width/2;
+
+		margin-left: @grid-ie8-gutterWidth/2;
+		margin-left: ~"-webkit-calc(@{half-gutter-width})";
+		margin-left:         ~"calc(@{half-gutter-width})";
+		
+		margin-right: @grid-ie8-gutterWidth/2;
+		margin-right: ~"-webkit-calc(@{half-gutter-width})";
+		margin-right:         ~"calc(@{half-gutter-width})";
+	}
+
+	// span
+	.span (@x:1, @columns:@grid-semantic-columns, @has-gutter: @gird-semantic-hasGutter, @gutter-width: @grid-semantic-gutterWidth) {
+		#grid.column-width ((100% / @columns) * @x, @has-gutter, @gutter-width);
+		.column (@has-gutter, @gutter-width);
+	}
+
+	// prefix will make moves to the right
+	.prefix (@offset:1, @columns:@grid-semantic-columns, @has-gutter: @gird-semantic-hasGutter, @gutter-width: @grid-semantic-gutterWidth) {
+		#grid.prefix-width ((100% / @columns) * @offset, @has-gutter, @gutter-width);
+	}
+
+	// suffix will make moves to the left
+	.suffix (@offset:1, @columns:@grid-semantic-columns, @has-gutter: @gird-semantic-hasGutter, @gutter-width: @grid-semantic-gutterWidth) {
+		#grid.suffix-width ((100% / @columns) * @offset, @has-gutter, @gutter-width);
+	}
+
+	// column width
+	.column-width (@column-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = false){
+		width: round(@column-width, 3);
+	}
+	.column-width (@column-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = true){
+		@width: round(@column-width, 3);
+		width: round(@width - @grid-ie8-gutterWidth, 3);
+		width: ~"-webkit-calc(@{width} - @{gutter-width})";
+		width:         ~"calc(@{width} - @{gutter-width})";
+	}
+
+	// prefix margin width
+	.prefix-width (@prefix-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = false){
+		margin-left: @prefix-width;
+	}
+	.prefix-width (@prefix-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = true) and not (@prefix-width = 0){
+		@half-gutter-width: @gutter-width/2;
+		@width: round(@prefix-width, 3);
+		margin-left: @width + @grid-ie8-gutterWidth/2;
+		margin-left: ~"-webkit-calc(@{width} + @{half-gutter-width})";
+		margin-left:    ~"-moz-calc(@{width} + @{half-gutter-width})";
+		margin-left:      ~"-o-calc(@{width} + @{half-gutter-width})";
+		margin-left:         ~"calc(@{width} + @{half-gutter-width})";
+	}
+	.prefix-width (@prefix-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = true) and (@prefix-width = 0){
+		@half-gutter-width: @gutter-width/2;
+
+		margin-left: @grid-ie8-gutterWidth/2;
+		margin-left: ~"-webkit-calc(@{half-gutter-width})";
+		margin-left:    ~"-moz-calc(@{half-gutter-width})";
+		margin-left:      ~"-o-calc(@{half-gutter-width})";
+		margin-left:         ~"calc(@{half-gutter-width})";
+	}
+
+	// suffix margin width
+	.suffix-width (@suffix-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = false){
+		margin-right: @suffix-width;
+	}
+	.suffix-width (@suffix-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = true) and not (@suffix-width = 0){
+		@width: round(@suffix-width, 3);
+		@half-gutter-width: @gutter-width/2;
+
+		margin-right: @width + @grid-ie8-gutterWidth/2;
+		margin-right: ~"-webkit-calc(@{width} + @{half-gutter-width})";
+		margin-right:    ~"-moz-calc(@{width} + @{half-gutter-width})";
+		margin-right:      ~"-o-calc(@{width} + @{half-gutter-width})";
+		margin-right:         ~"calc(@{width} + @{half-gutter-width})";
+	}
+	.suffix-width (@suffix-width, @has-gutter, @gutter-width: @grid-gutterWidth) when (@has-gutter = true) and (@suffix-width = 0){
+		@half-gutter-width: @gutter-width/2;
+
+		margin-right: @suffix-width + @grid-ie8-gutterWidth/2;
+		margin-right: ~"-webkit-calc(@{half-gutter-width})";
+		margin-right:    ~"-moz-calc(@{half-gutter-width})";
+		margin-right:      ~"-o-calc(@{half-gutter-width})";
+		margin-right:         ~"calc(@{half-gutter-width})";
+	}
+
+	.font-size (@size, @base-size: 16) when not (isunit(@size, "rem")){
+		font-size: @size;
+	}
+	.font-size (@size, @base-size: 16) when (isunit(@size, "rem")){
+		@px-value: unit(@size)*@base-size;
+		font-size: ~"@{px-value}px";
+		font-size: @size;
+	}
+}

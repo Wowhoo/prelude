@@ -1,0 +1,29 @@
+#grid {
+	.core (@gutter-width, @with-noGutter) {
+		.row {
+			#grid.row (true, @grid-gutterWidth);
+
+			&.center {
+				text-align: center;
+			}
+		}
+
+		.column, [class*="span-"] {
+			#grid.column (true, @grid-gutterWidth, @grid-fontSize);
+		}
+
+		.withNoGutter (@with-noGutter) when (@with-noGutter = true){
+			.no-gutter {
+				margin-left: 0;
+				margin-right: 0;
+
+				.column, [class*="span-"] {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+	
+		.withNoGutter (@with-noGutter);
+	}
+}

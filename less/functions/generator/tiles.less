@@ -1,0 +1,41 @@
+@import "variables.less";
+@import "core.less";
+@import "../mixins/tiles.less";
+
+#gird {
+	.tiles-device-generator (@variables){
+		@prefix: ;
+		@columns: extract(@variables, 1);
+		@withNoGutter: extract(@variables, 2);
+
+		#grid.tiles (@prefix, @columns, @withNoGutter);
+	}
+
+	.tiles-device-generator (@device, @breakpoint, @variables) {
+		@prefix: ~"@{device}-";
+		@columns: extract(@variables, 1);
+		@withNoGutter: extract(@variables, 2);
+
+		@media only screen and (max-width: @breakpoint) {
+			#grid.tiles (@prefix, @columns, @withNoGutter);
+		}
+	}
+
+	.tiles-generator (@devices: @grid-devices, @breakpoints: @grid-devices-breakpoints, @count: @grid-devices-count) {
+		#gird.tiles-device-generator (@grid-tiles-default);
+
+		#gird.tiles-generator (@devices, @breakpoints, @count, 1);
+	}
+
+	.tiles-generator (@devices: @grid-devices, @breakpoints: @grid-devices-breakpoints, @count: @grid-devices-count, @index) when (@index < @count + 1){
+		@device: extract(@devices, @index);
+		@breakpoint: extract(@breakpoints, @index);
+		@variables-name: %("grid-tiles-%s", @device);
+
+		#gird.tiles-device-generator (@device, @breakpoint, @@variables-name);
+
+		#gird.tiles-generator (@devices, @breakpoints, @count, @index + 1);
+	}
+}
+
+#gird.tiles-generator ();

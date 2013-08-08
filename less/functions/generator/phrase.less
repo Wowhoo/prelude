@@ -1,0 +1,43 @@
+@import "variables.less";
+@import "core.less";
+@import "../mixins/phrase.less";
+
+
+
+#gird {
+	.phrase-device-generator (@variables){
+		@prefix: ;
+		@columns: extract(@variables, 1);
+		@withNoGutter: extract(@variables, 2);
+
+		#grid.phrase (@prefix, @columns, @withNoGutter);
+	}
+
+	.phrase-device-generator (@device, @breakpoint, @variables) {
+		@prefix: ~"@{device}-";
+		@columns: extract(@variables, 1);
+		@withNoGutter: extract(@variables, 2);
+
+		@media only screen and (max-width: @breakpoint) {
+			#grid.phrase (@prefix, @columns, @withNoGutter);
+		}
+	}
+
+	.phrase-generator (@devices: @grid-devices, @breakpoints: @grid-devices-breakpoints, @count: @grid-devices-count) {
+		#gird.phrase-device-generator (@grid-phrase-default);
+
+		#gird.phrase-generator (@devices, @breakpoints, @count, 1);
+	}
+
+	.phrase-generator (@devices: @grid-devices, @breakpoints: @grid-devices-breakpoints, @count: @grid-devices-count, @index) when (@index < @count + 1){
+		@device: extract(@devices, @index);
+		@breakpoint: extract(@breakpoints, @index);
+		@variables-name: %("grid-phrase-%s", @device);
+
+		#gird.phrase-device-generator (@device, @breakpoint, @@variables-name);
+
+		#gird.phrase-generator (@devices, @breakpoints, @count, @index + 1);
+	}
+}
+
+#gird.phrase-generator ();

@@ -1,0 +1,46 @@
+@import "variables.less";
+@import "core.less";
+@import "../mixins/basic.less";
+
+#gird {
+	.basic-device-generator (@variables){
+		@prefix: ;
+		@columns: extract(@variables, 1);
+		@withPrefix: extract(@variables, 2);
+		@withSuffix: extract(@variables, 3);
+		@withNoGutter: extract(@variables, 4);
+
+		#grid.basic (@prefix, @columns, @withPrefix, @withSuffix, @withNoGutter);
+	}
+
+	.basic-device-generator (@device, @breakpoint, @variables) {
+		@prefix: ~"@{device}-";
+		@columns: extract(@variables, 1);
+		@withPrefix: extract(@variables, 2);
+		@withSuffix: extract(@variables, 3);
+		@withNoGutter: extract(@variables, 4);
+
+		@media only screen and (max-width: @breakpoint) {
+			#grid.basic (@prefix, @columns, @withPrefix, @withSuffix, @withNoGutter);
+		}
+	}
+
+	.basic-generator (@devices: @grid-devices, @breakpoints: @grid-devices-breakpoints, @count: @grid-devices-count) {
+		#gird.basic-device-generator (@grid-basic-default);
+
+		#gird.basic-generator (@devices, @breakpoints, @count, 1);
+	}
+
+	.basic-generator (@devices: @grid-devices, @breakpoints: @grid-devices-breakpoints, @count: @grid-devices-count, @index) when (@index < @count + 1){
+		@device: extract(@devices, @index);
+		@breakpoint: extract(@breakpoints, @index);
+		@variables-name: %("grid-basic-%s", @device);
+
+		#gird.basic-device-generator (@device, @breakpoint, @@variables-name);
+
+		#gird.basic-generator (@devices, @breakpoints, @count, @index + 1);
+	}
+}
+
+
+#gird.basic-generator ();

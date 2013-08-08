@@ -1,0 +1,29 @@
+@import "semantic.less";
+
+#grid {
+	.tiles (@namespace, @grid-columns, @with-noGutter, @has-gutter: true) {
+		// define
+		.columnX (@index) when (@index < @grid-columns + 1) {
+			.@{namespace}has-@{index} {
+				.column {
+					#grid.column-width (100%/@index, @has-gutter);
+				}
+			}
+			.columnX (@index + 1);
+		}
+		
+
+		.columnX (@index, @with-noGutter) when (@index < @grid-columns + 1) and (@with-noGutter = true) {
+			.@{namespace}has-@{index}.no-gutter {
+				.column {
+					#grid.column-width (100%/@index, false);
+				}
+			}
+			.columnX (@index + 1, @with-noGutter);
+		}
+		
+		// generate
+		.columnX (1);
+		.columnX (1, @with-noGutter);
+	}
+}

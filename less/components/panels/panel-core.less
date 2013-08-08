@@ -1,0 +1,37 @@
+@import "init.less";
+// ==========================================================================
+// Panel
+// ==========================================================================
+.panel {
+  padding: 0.8em;
+  margin-bottom: 1.2em;
+
+  .list-group {
+	  margin: 1em -1em -1em;
+
+	  .list-group .list-group-item {
+		  border-width: 1px 0;
+		}
+	}		
+}
+
+.panel-heading {
+  padding: 0.3em 0.8em;
+  margin: -1em -1em 1em;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: @panel-fontSize;
+  font-weight: 500;
+
+  & > a {
+  	color: inherit;
+  }
+}
+
+.panel-footer {
+  padding: 0.3em 0.8em;
+  margin: 1em -1em -1em;
+}

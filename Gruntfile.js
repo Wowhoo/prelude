@@ -21,9 +21,6 @@ module.exports = function(grunt) {
       'tab|core,extend',
       'progress|core',
       'label|core,extend'
-    ],
-    functions: [
-      'grid|core,base,equalization,phrase'
     ]
   };
 
@@ -129,13 +126,18 @@ module.exports = function(grunt) {
                     flatten: true,
                     cwd: 'components/',
                     src: [
-                        'adaptGrid/src/mixins.less',
+                        'adaptGrid/mixins/*.less',
                     ],
-                    dest: 'less/functions/grid/',
-                    rename: function (dest, src) {
-                      src = 'grid-mixins.less';
-                      return path.join(dest, src);
-                  }
+                    dest: 'less/functions/mixins/'
+                },
+                {
+                    expand: true,
+                    flatten: true,
+                    cwd: 'components/',
+                    src: [
+                        'adaptGrid/generator/*.less',
+                    ],
+                    dest: 'less/functions/generator/'
                 }
             ]
         },
@@ -156,6 +158,14 @@ module.exports = function(grunt) {
       },
       skin_build: {
         files: less_skin_build_files
+      },
+      dist: {
+        files: {
+          "build/functions/grid-basic.css": "less/functions/generator/basic.less",
+          "build/functions/grid-tiles.css": "less/functions/generator/tiles.less",
+          "build/functions/grid-phrase.css": "less/functions/generator/phrase.less",
+          "build/functions/grid-full.css": "less/functions/generator/full.less",
+        }
       }
     },
 
@@ -303,6 +313,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
       'clean:build',
       'less:build',
+      'less:dist',
       'concat:build',
       'cssmin',
       'concat:all',

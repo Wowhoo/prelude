@@ -38,76 +38,110 @@
 
 // Typography related mixins
 // ==========================================================================
-
-.px-to-rem(@property, @px-size){
-  @rem-size: @px-size / 16;
-
-  ._px-to-rem(@px-size) when (@property = 'margin-top') {
-    margin-top: ~"@{px-size}px"; 
-    margin-top: ~"@{rem-size}rem";
-  }
-
-  ._px-to-rem(@px-size) when (@property = 'margin-left') {
-    margin-left: ~"@{px-size}px"; 
-    margin-left: ~"@{rem-size}rem";
-  }
-
-  ._px-to-rem(@px-size) when (@property = 'margin-bottom') {
-    margin-bottom: ~"@{px-size}px"; 
-    margin-bottom: ~"@{rem-size}rem";
-  }
-
-  ._px-to-rem(@px-size) when (@property = 'margin-right') {
-    margin-right: ~"@{px-size}px"; 
-    margin-right: ~"@{rem-size}rem";
-  }
-
-  ._px-to-rem(@px-size) when (@property = 'padding-top') {
-    padding-top: ~"@{px-size}px"; 
-    padding-top: ~"@{rem-size}rem";
-  }
-
-  ._px-to-rem(@px-size) when (@property = 'padding-left') {
-    padding-left: ~"@{px-size}px"; 
-    padding-left: ~"@{rem-size}rem";
-  }
-
-  ._px-to-rem(@px-size) when (@property = 'padding-bottom') {
-    padding-bottom: ~"@{px-size}px"; 
-    padding-bottom: ~"@{rem-size}rem";
-  }
-
-  ._px-to-rem(@px-size) when (@property = 'padding-right') {
-    padding-right: ~"@{px-size}px"; 
-    padding-right: ~"@{rem-size}rem";
-  }  
+.px-to-rem (@property, @size, @base-size: 16) when not (isunit(@size, "rem")){
+  @px-value: @size;
   
-  ._px-to-rem(@px-size);
+  ._px-to-rem(@px-value) when (@property = 'margin-top') {
+    margin-top: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'margin-left') {
+    margin-left: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'margin-bottom') {
+    margin-bottom: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'margin-right') {
+    margin-right: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-top') {
+    padding-top: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-left') {
+    padding-left: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-bottom') {
+    padding-bottom: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-right') {
+    padding-right: @size;
+  }
+  ._px-to-rem(@px-value);
 }
+.px-to-rem (@property, @size, @base-size: 16) when (isunit(@size, "rem")){
+  @px-value: unit(@size)*@base-size;
 
+  ._px-to-rem(@px-value) when (@property = 'margin-top') {
+    margin-top: ~"@{px-value}px"; 
+    margin-top: @size;
+  }
 
-.font-size-rems(@px-size) {
-  @rem-size: @px-size / 16;
-  font-size: ~"@{px-size}px"; 
-  font-size: ~"@{rem-size}rem";
+  ._px-to-rem(@px-value) when (@property = 'margin-left') {
+    margin-left: ~"@{px-value}px"; 
+    margin-left: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'margin-bottom') {
+    margin-bottom: ~"@{px-value}px"; 
+    margin-bottom: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'margin-right') {
+    margin-right: ~"@{px-value}px"; 
+    margin-right: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-top') {
+    padding-top: ~"@{px-value}px"; 
+    padding-top: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-left') {
+    padding-left: ~"@{px-value}px"; 
+    padding-left: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-bottom') {
+    padding-bottom: ~"@{px-value}px"; 
+    padding-bottom: @size;
+  }
+
+  ._px-to-rem(@px-value) when (@property = 'padding-right') {
+    padding-right: ~"@{px-value}px"; 
+    padding-right: @size;
+  }
+  ._px-to-rem(@px-value);
 }
 
 // Font Sizes (REMs with PX fallback for older browsers)
-.font-size(@px-size) {
-  @rem-size: @px-size / 16;
-  font-size: ~"@{px-size}px"; 
-  font-size: ~"@{rem-size}rem";
+.font-size (@size, @base-size: 16) when not (isunit(@size, "rem")){
+  font-size: @size;
+}
+.font-size (@size, @base-size: 16) when (isunit(@size, "rem")){
+  @px-value: unit(@size)*@base-size;
+  font-size: ~"@{px-value}px";
+  font-size: @size;
 }
 
 // Line Height Sizes (REMs with PX fallback for older browsers)
-.line-height(@px-size) {
-  @rem-size: @px-size / 16;
-  line-height: ~"@{px-size}px"; 
-  line-height: ~"@{rem-size}rem";
+.line-height (@size, @base-size: 16) when not (isunit(@size, "rem")){
+  line-height: @size;
+}
+.line-height (@size, @base-size: 16) when (isunit(@size, "rem")){
+  @px-value: unit(@size)*@base-size;
+  line-height: ~"@{px-value}px";
+  line-height: @size;
 }
 
-.font-size-ems(@target-px-size, @context-px-size:@base-font-size) {
-  font-size: (@target-px-size / @context-px-size) * 1em;
+
+.font-size-ems(@target-px-value, @context-px-value:@base-font-size) {
+  font-size: (@target-px-value / @context-px-value) * 1em;
 }
 
 .font-face( @family-name, @font-path, @font-weight:normal, @font-style:normal, @include-svg:false ) when not (@include-svg) {
