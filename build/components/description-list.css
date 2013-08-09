@@ -1,0 +1,11 @@
+.description-list-line > dt {
+  font-weight: normal;
+}
+.description-list-line > dt:nth-child(n+2) {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #eeeeee;
+}
+.description-list-line > dd {
+  color: #eeeeee;
+}

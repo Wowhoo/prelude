@@ -7,15 +7,17 @@ module.exports = function(grunt) {
     common: [
       'reset',
       'typography',
-      'forms|core,extend'
+      'forms|core,extend,horizontal,inline'
     ],
     components: [
       'alert',
       'icon',
+      'description-list',
       'breadcrumbs|core,extend',
       'buttons|core,extend',
       'pager|core,extend',
       'pagination|core,extend',
+      'panels|core,extend',
       'tables|core,extend',
       'menu|core,extend',
       'tab|core,extend',

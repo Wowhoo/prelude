@@ -1,0 +1,17 @@
+.panel {
+  padding: 0.8em;
+}
+.panel-heading {
+  padding: 0.6em 0.8em;
+  margin: -0.8em -0.8em 0.8em;
+}
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.panel-footer {
+  padding: 0.6em 0.8em;
+  margin: 0.8em -0.8em -0.8em;
+}
