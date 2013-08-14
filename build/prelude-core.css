@@ -1,4 +1,4 @@
-/*! Prelude - v0.1.0 - 2013-08-13
+/*! Prelude - v0.1.0 - 2013-08-14
 * https://github.com/amazingSurge/prelude
 * Copyright (c) 2013 amazingSurge; Licensed GPL */
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -970,8 +970,11 @@ label {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 500;
+}
+.panel-body {
+  padding: 0.8em;
 }
 .panel-footer {
   padding: 0.6em 0.8em;
